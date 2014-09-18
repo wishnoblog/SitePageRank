@@ -2305,3 +2305,38 @@ Stack trace:
 REQUEST_URI=/index.php?r=Run
 in /Users/WiSH/projects/kuasgoogle/kuas/protected/controllers/RunController.php (10)
 in /Users/WiSH/projects/kuasgoogle/kuas/index.php (13)
+2014/09/18 15:36:56 [error] [exception.CException] exception 'CException' with message '屬性 "CBreadcrumbs.class" 未被定義.' in /Users/WiSH/projects/SitePageRank/framework/base/CComponent.php:173
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWidgetFactory.php(161): CComponent->__set('class', 'breadcrumb')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(GroupController), 'zii.widgets.CBr...', Array)
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CBr...', Array)
+#3 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/main.php(71): CBaseController->widget('zii.widgets.CBr...', Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(126): require('/Users/WiSH/pro...')
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/WiSH/pro...', Array, true)
+#6 /Users/WiSH/projects/SitePageRank/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/Users/WiSH/pro...', Array, true)
+#7 /Users/WiSH/projects/SitePageRank/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#8 /Users/WiSH/projects/SitePageRank/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(206): COutputProcessor->run()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/column2.php(26): CBaseController->endContent()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(126): require('/Users/WiSH/pro...')
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/WiSH/pro...', Array, true)
+#14 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(784): CBaseController->renderFile('/Users/WiSH/pro...', Array, true)
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/GroupController.php(128): CController->render('index', Array)
+#16 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): GroupController->actionIndex()
+#17 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#24 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('')
+#26 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('group')
+#27 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=group
+HTTP_REFERER=http://googleget:8888/index.php
+---

@@ -34,21 +34,32 @@
 				<div class="collapse navbar-collapse">
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions'=>array('class'=>'nav navbar-nav'),
+						'encodeLabel'=>false,
+
 						'items'=>array(
-							array('label'=>'說明', 'url'=>array('/site/index')),
-							array('label'=>'Rank', 'url'=>array('#')),
-							array('label'=>'網址', 'url'=>array('/siteurl', 'view'=>'about')),
-							array('label'=>'提升網站能見度', 'url'=>array('')),
+							array('label'=>'<span class="glyphicon glyphicon-star"></span> 說明', 'url'=>array('/site/index')),
+							array('label'=>'<i class="fa fa-globe"></i> Rank', 'url'=>array('#')),
+							array('label'=>'<i class="fa fa-flag-o"></i> 提升網站能見度', 'url'=>array('')),
 
-							array('label'=>Yii::app()->params['schoolName'], 'url'=>Yii::app()->params['schoolURL'],'linkOptions' => array('target'=>'_blank'), ),
-
-							array('label'=>'管理登入', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>'登出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'組織', 'url'=>array('/group/'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'網址', 'url'=>array('/siteurl/'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'記錄查詢', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>'<i class="fa fa-university"></i> '. Yii::app()->params['schoolName'], 'url'=>Yii::app()->params['schoolURL'],'linkOptions' => array('target'=>'_blank'), ),
 						),
 					)); ?>
+
+					<?php $this->widget('zii.widgets.CMenu',array(
+						'htmlOptions'=>array('class'=>'nav navbar-nav navbar-right'),
+						'encodeLabel'=>false,
+						'items'=>array(
+
+							array('label'=>'<i class="fa fa-users"></i> 組織', 'url'=>array('/group/'), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>'<i class="fa fa-tasks"></i> 網址', 'url'=>array('/siteurl/'), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>'<i class="fa fa-floppy-o"></i> 記錄查詢', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>'<i class="fa fa-cog"></i>管理登入', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),							
+							array('label'=>'登出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						),
+					)); ?>
+
+					 <ul class="nav navbar-nav navbar-right">
+					 </ul>
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
@@ -56,6 +67,7 @@
 				<?php if(isset($this->breadcrumbs)):?>
 				<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 					'links'=>$this->breadcrumbs,
+					'htmlOptions'=>array ('class'=>'breadcrumb')
 				)); ?><!-- breadcrumbs -->
 				<?php endif?>
 				<?php echo $content; ?>
