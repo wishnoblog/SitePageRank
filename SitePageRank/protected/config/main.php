@@ -10,6 +10,7 @@ return array(
 	'name'=>'高應大頁面數統計系統',
 	'theme'=>'bootstrap',
 	'language'=>'zh_TW',
+	'defaultController' => 'Data/rank', 
 
 
 	// preloading 'log' component
@@ -40,16 +41,20 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
+				'Getjson'=> 'Data/Getjson',
+				'排名'   => 'Data/Rank',
+				'排名/Getjson' => 'Data/Getjson',
+
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+		
 		// 'db'=>array(
 		// 	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		// ),

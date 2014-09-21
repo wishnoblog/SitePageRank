@@ -7,12 +7,16 @@
 		<title><?php echo $this->pageTitle ?></title>
 		<!-- bootstarp css -->
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/bootstrap.min.css" />
+				<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/bootstrap-table.css" />
+
 		<!-- font-awesome css -->
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/font-awesome.min.css" />
 		<!-- jquery core js -->
-		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/jquery-1.11.0.js"></script>
+		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/jquery-1.11.1.min.js"></script>
 		<!-- bootstarp core js -->
 		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/bootstrap.min.js"></script>
+		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/bootstrap-table.js"></script>
+
 		<style type="text/css">
 			body{
 				padding-top: 60px;
@@ -37,9 +41,9 @@
 						'encodeLabel'=>false,
 
 						'items'=>array(
-							array('label'=>'<span class="glyphicon glyphicon-star"></span> 說明', 'url'=>array('/site/index')),
-							array('label'=>'<i class="fa fa-globe"></i> Rank', 'url'=>array('#')),
-							array('label'=>'<i class="fa fa-flag-o"></i> 提升網站能見度', 'url'=>array('')),
+							array('label'=>'<i class="fa fa-globe"></i> 最新排名', 'url'=>array('/排名')),
+							array('label'=>'<span class="glyphicon glyphicon-star"></span> 提升搜尋排名', 'url'=>array('/site/pagerank')),
+							array('label'=>'<i class="fa fa-flag-o"></i> 提升網站能見度', 'url'=>array('/site/seo')),
 
 							array('label'=>'<i class="fa fa-university"></i> '. Yii::app()->params['schoolName'], 'url'=>Yii::app()->params['schoolURL'],'linkOptions' => array('target'=>'_blank'), ),
 						),

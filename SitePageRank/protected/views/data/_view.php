@@ -5,32 +5,20 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('DataID')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->DataID), array('view', 'id'=>$data->DataID)); ?>
+
+
+	<?php echo CHtml::encode($data['type']); ?>
+
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('SiteID')); ?>:</b>
-	<?php echo CHtml::encode($data->SiteID); ?>
+	<?php echo CHtml::encode($data['name']); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('GoogleData')); ?>:</b>
-	<?php echo CHtml::encode($data->GoogleData); ?>
+	<?php echo CHtml::encode($data['Pages']); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Time')); ?>:</b>
-	<?php echo CHtml::encode($data->Time); ?>
-	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('YY')); ?>:</b>
-	<?php echo CHtml::encode($data->YY); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('MM')); ?>:</b>
-	<?php echo CHtml::encode($data->MM); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('DD')); ?>:</b>
-	<?php echo CHtml::encode($data->DD); ?>
+	<?php echo CHtml::encode($data['Rank']); ?>
 	<br />
 
 

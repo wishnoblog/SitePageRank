@@ -3,12 +3,30 @@
 class RunController extends Controller
 {
 	
+	/**
+	 * 手動執行
+	 */
 	public function actionIndex()
 	{
 
 		header('Content-Type: text/html; charset=utf-8');
+		/**
+		 * 輸入的流程應該是->產生GUID及時間碼->存入Task及變數->
+		 */
 
-		$dataProvider=new CActiveDataProvider('SiteUrl');
+		//$GUID = $this->GUID();
+//		$timestamp= getTimestamp();
+
+		$taskModel=$model=new Task;
+		$date = new DateTime();
+		$taskModel->attributes = array
+            (
+            	'date'=> $date->format( 'U' ),
+            );
+        $taskModel->save();
+        $taskID=$taskModel->getPrimaryKey();
+
+		$dataProvider = new CActiveDataProvider('SiteUrl');
 		echo '資料庫共'.$dataProvider->totalItemCount.'筆資料'."\r\n";
 		$i=0;
 		foreach ($dataProvider->getData() as $record) {
@@ -23,18 +41,20 @@ class RunController extends Controller
 
             //系統延遲
             sleep(2);
-            $now   = new DateTime;
+            $now = new DateTime;
             
             echo("[log]".$now->format( 'Y-m-d H:i:s' )."搜尋".$site."有".$results.'項結果 '."\r\n");
 
-            $model=new Data;
+            $model = new Data;
             $model->attributes=array
             (
             	'SiteID'=>$id,
              	'GoogleData'=>$results,
+             	'Time' => $now->format( 'U' ),
              	'YY'=>$now->format( 'Y' ),
              	'MM'=>$now->format( 'm' ),
              	'DD'=>$now->format( 'd' ),
+             	'TaskID'=>$taskID
              	//'Time'=>$now->getTimestamp(),
             	);
             
@@ -47,11 +67,15 @@ class RunController extends Controller
             }
 
         }
-		echo '執行完畢,共儲存'.$i.'筆資料';
+		echo '執行完畢,共儲存'. $i .'筆資料';
 		
 		
 		//$this->render('index');
 	}
+	/**
+	 * 自動執行function
+	 * 需要輸入$key驗證,用於執行Bash指令
+	 */
 	public function GetData($key)
 	{
 		header('Content-Type: text; charset=utf-8');
@@ -118,6 +142,7 @@ class RunController extends Controller
 		return $results;
 
 	}
+
 	public function loadModel($id)
 	{
 		$model=Group::model()->findByPk($id);

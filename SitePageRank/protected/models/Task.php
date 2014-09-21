@@ -1,22 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "tbl_user".
+ * This is the model class for table "task".
  *
- * The followings are the available columns in table 'tbl_user':
- * @property integer $id
- * @property string $username
- * @property string $password
- * @property string $email
+ * The followings are the available columns in table 'task':
+ * @property integer $TaskID
+ * @property string $date
  */
-class TblUser extends CActiveRecord
+class Task extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tbl_user';
+		return 'task';
 	}
 
 	/**
@@ -27,11 +25,10 @@ class TblUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email', 'required'),
-			array('username, password, email', 'length', 'max'=>128),
+			array('date', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email', 'safe', 'on'=>'search'),
+			array('TaskID, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,10 +49,8 @@ class TblUser extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
-			'email' => 'Email',
+			'TaskID' => 'Task',
+			'date' => 'Date',
 		);
 	}
 
@@ -77,10 +72,8 @@ class TblUser extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('email',$this->email,true);
+		$criteria->compare('TaskID',$this->TaskID);
+		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -91,7 +84,7 @@ class TblUser extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return TblUser the static model class
+	 * @return Task the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

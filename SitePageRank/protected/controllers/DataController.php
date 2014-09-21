@@ -28,7 +28,7 @@ class DataController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','GetJson','Rank'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -51,6 +51,8 @@ class DataController extends Controller
 	 */
 	public function actionView($id)
 	{
+
+		 
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -116,16 +118,48 @@ class DataController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+	/**
+	 * Get json
+	 */
+	public function actionGetJson()
+	{
+		$sql="SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
 
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc";	
+			 
+
+			$connection=Yii::app()->db;  
+			$command=$connection->createCommand($sql);
+			$rows=$command->queryAll();   
+			echo CJSON::encode($rows);
+
+	}
 	/**
 	 * Lists all models.
 	 */
+	public function actionRank()
+	{
+			$this->layout='//layouts/main';
+			$this->render('index');
+
+	}
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Data');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		
 	}
 
 	/**

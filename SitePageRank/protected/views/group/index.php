@@ -14,20 +14,6 @@ $this->menu=array(
 ?>
 
 <h1>組織</h1>
-<table class="table table-hover">
-	  <thead>
-		<tr>
-		<th>#</th>
-			<th>#</th>
-			<th>組織</th>
-			<th>類型</th>
-			<th>說明</th>
-		</tr>
-	</thead>	
-	<tbody>
-
-	</tbody>
-</table>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(

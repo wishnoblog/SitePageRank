@@ -11,6 +11,7 @@
  * @property integer $YY
  * @property integer $MM
  * @property integer $DD
+ * @property string $TaskID
  *
  * The followings are the available model relations:
  * @property SiteUrl $site
@@ -33,12 +34,12 @@ class Data extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('SiteID, YY, MM, DD', 'required'),
+			array('SiteID, Time, YY, MM, DD', 'required'),
 			array('SiteID, YY, MM, DD', 'numerical', 'integerOnly'=>true),
-			array('GoogleData', 'length', 'max'=>20),
+			array('GoogleData, TaskID', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('DataID, SiteID, GoogleData, Time, YY, MM, DD', 'safe', 'on'=>'search'),
+			array('DataID, SiteID, GoogleData, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +68,7 @@ class Data extends CActiveRecord
 			'YY' => '年',
 			'MM' => '月',
 			'DD' => '日',
+			'TaskID' => 'Task',
 		);
 	}
 
@@ -91,10 +93,11 @@ class Data extends CActiveRecord
 		$criteria->compare('DataID',$this->DataID,true);
 		$criteria->compare('SiteID',$this->SiteID);
 		$criteria->compare('GoogleData',$this->GoogleData,true);
-		$criteria->compare('Time',$this->Time,true);
+		$criteria->compare('Time',$this->Time);
 		$criteria->compare('YY',$this->YY);
 		$criteria->compare('MM',$this->MM);
 		$criteria->compare('DD',$this->DD);
+		$criteria->compare('TaskID',$this->TaskID,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
