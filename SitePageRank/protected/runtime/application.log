@@ -4710,3 +4710,715 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/index.php/run/
 ---
+2014/09/22 09:37:19 [error] [php] Undefined variable: form (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:29)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (29)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:09:42 [error] [php] Undefined variable: form (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:29)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (29)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:09:48 [error] [php] Undefined variable: form (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:29)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (29)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:10:03 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:36)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (36)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:10:47 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:36)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (36)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:11:12 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:36)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/Rank
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (36)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:14:12 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:37)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/Rank
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (37)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:19:30 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:37)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/Rank
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (37)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:19:31 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:37)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/Rank
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (37)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:28:09 [error] [php] Undefined variable: model (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php:43)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/Rank
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (43)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:30:06 [error] [php] Trying to get property of non-object (/Users/WiSH/projects/SitePageRank/framework/web/helpers/CHtml.php:2529)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(126): require()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): DataController->renderInternal()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): DataController->renderFile()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): DataController->renderPartial()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(173): DataController->render()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#14 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#15 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/Rank
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php (43)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (173)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:34:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "Run" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('Run')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Run')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('data/Run')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/data/Run
+---
+2014/09/22 10:44:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc.
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (163)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:44:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 無法執行 SQL 陳述: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' in /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(163): CDbCommand->queryAll()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionGetJson()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Getjson')
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Getjson')
+#13 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php/Getjson
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/22 10:47:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:1118
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('group/delete')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/group/delete/1
+HTTP_REFERER=http://googleget:8888/index.php/group/admin
+---
+2014/09/22 10:47:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc.
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (163)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:47:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 無法執行 SQL 陳述: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' in /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(163): CDbCommand->queryAll()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionGetJson()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Getjson')
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Getjson')
+#13 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php/Getjson
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/22 10:55:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:1118
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('siteurl/delete')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/siteurl/delete/4
+HTTP_REFERER=http://googleget:8888/index.php/siteurl/admin
+---
+2014/09/22 10:55:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc.
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (163)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:55:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 無法執行 SQL 陳述: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' in /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(163): CDbCommand->queryAll()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionGetJson()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Getjson')
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Getjson')
+#13 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php/Getjson
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/22 10:55:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc.
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (163)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 10:55:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 無法執行 SQL 陳述: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' at line 17. The SQL statement executed was: SELECT 
+			`group`.`groupid` AS 'id',
+			`group`.`type`, 
+			`group`.`name`, 
+			 
+
+			SUM(`data`.`GoogleData`) AS 'Pages',
+			@curRank := @curRank + 1 AS Rank
+			FROM
+
+			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+			,(SELECT @curRank := 0) r 
+
+			WHERE TaskID=
+
+			GROUP BY `group`.`groupid`
+
+			ORDER BY  Pages desc' in /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(163): CDbCommand->queryAll()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionGetJson()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Getjson')
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Getjson')
+#13 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php/Getjson
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/22 10:58:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:1118
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('siteurl/delete')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/siteurl/delete/5
+HTTP_REFERER=http://googleget:8888/index.php/siteurl/admin
+---
+2014/09/22 11:04:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:1118
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('group/delete')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/group/delete/23
+HTTP_REFERER=http://googleget:8888/index.php/group/admin?Group_page=2
+---
+2014/09/22 16:36:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getjson')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('data/getjson')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/data/getjson/
+---
+2014/09/22 16:44:04 [error] [php] Undefined variable: id (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php:143)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/data/getjsonbyid/5
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (143)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/22 16:44:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getjsonbyid')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('data/getjsonbyi...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/data/getjsonbyid/a
+---
+2014/09/23 10:17:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/4
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:17:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/4
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:18:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/4
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:18:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/4
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:18:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/4
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:31:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/3
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:31:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Getjsonbyid/view".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Getjsonbyid/vie...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Getjsonbyid/3
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:45:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%E6%8E%92%E5%90%8D
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/23 10:45:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%E6%8E%92%E5%90%8D
+---

@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'高應大頁面數統計系統',
+	'name'=>'高應大網站資訊統計系統',
 	'theme'=>'bootstrap',
 	'language'=>'zh_TW',
 	'defaultController' => 'Data/rank', 
@@ -42,13 +42,14 @@ return array(
 		),
 		// uncomment the following to enable URLs in path-format
 		
-		'urlManager'=>array(
-			'urlFormat'=>'path',
+		 'urlManager'=>array(
+		 	'urlFormat'=>'path',
 			'rules'=>array(
+				'Getjsonbyid/<id:\d+>'=> 'Data/Getjsonbyid/',
 				'Getjson'=> 'Data/Getjson',
 				'排名'   => 'Data/Rank',
 				'排名/Getjson' => 'Data/Getjson',
-
+				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -99,7 +100,7 @@ return array(
 		'adminUsername'=>'admin',
 		'adminPassword'=>'admin',
 		//學校的名字
-		'schoolName'=>'學校名稱',
+		'schoolName'=>'高應大',
 		//學校的網址
 		'schoolURL'=>'http://www.kuas.edu.tw',
 		//執行資料抓取時候，要附加的KEY，務必到下列網址產生，產生時候不要包含特殊符號

@@ -28,7 +28,7 @@ class DataController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','GetJson','Rank'),
+				'actions'=>array('index','view','GetJson','GetJsonByID','Rank'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -119,42 +119,94 @@ class DataController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 	/**
+	 * 取得執行順序。
+	 */
+	public function actionGetTaskList()
+	{
+
+
+	}
+	/**
 	 * Get json
 	 */
 	public function actionGetJson()
+	{	
+		//取得最後一筆Task
+		$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
+		echo $this->getJson($lastId);
+
+
+
+	}
+		public function actionGetJsonByID($id)
 	{
-		$sql="SELECT 
-			`group`.`groupid` AS 'id',
-			`group`.`type`, 
-			`group`.`name`, 
-			 
+		if(floor($id) == $id)
+		{
+			//檢查ID是否存在
+			if(Task::model()->exists('TaskID = :TaskID', array(":TaskID"=>$id)))
+			{
+				echo $this->getJson($id);
+			}else
+			{
+				echo "error";
+			}
+		};
+	}
 
-			SUM(`data`.`GoogleData`) AS 'Pages',
-			@curRank := @curRank + 1 AS Rank
-			FROM
+	/**
+	 * 產生Json
+	 */
+	private function getJson($id)
+	{
+			$sql="SELECT @rownum := @rownum+1 AS 'Rank', a.*
+				FROM (
+				SELECT 
+							`group`.`groupid` AS 'id',
+							`group`.`type`, 
+							`group`.`name`, 
 
-			`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
-			JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
-			,(SELECT @curRank := 0) r 
+							SUM(`data`.`GoogleData`) AS 'Pages'
+							FROM
+							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+							JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
 
-			GROUP BY `group`.`groupid`
+							WHERE TaskID=".$id."
 
-			ORDER BY  Pages desc";	
+							GROUP BY `group`.`groupid`
+
+							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r;  ";	
 			 
 
 			$connection=Yii::app()->db;  
 			$command=$connection->createCommand($sql);
 			$rows=$command->queryAll();   
-			echo CJSON::encode($rows);
 
+			//形態轉換，將需要成為數字的轉成正確的數字
+			$rows2=array();
+			foreach($rows as $value){
+
+				$new_value=array(
+					'id'=>$value['id'],
+					'Rank'=>intval($value['Rank']),
+					'Pages'=>intval($value['Pages']),
+					'name'=>$value['name'],
+					'type'=>$value['type'],
+					);
+				array_push($rows2,$new_value);
+			}
+			return CJSON::encode($rows2);
 	}
+	
 	/**
 	 * Lists all models.
 	 */
 	public function actionRank()
 	{
+
 			$this->layout='//layouts/main';
+			Yii::app()->clientScript->registerCoreScript('jquery');
 			$this->render('index');
+
 
 	}
 	public function actionIndex()

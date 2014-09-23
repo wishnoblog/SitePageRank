@@ -7,15 +7,14 @@
 		<title><?php echo $this->pageTitle ?></title>
 		<!-- bootstarp css -->
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/bootstrap.min.css" />
-				<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/bootstrap-table.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/bootstrap-table.css" />
 
 		<!-- font-awesome css -->
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl ?>/css/font-awesome.min.css" />
-		<!-- jquery core js -->
-		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/jquery-1.11.1.min.js"></script>
 		<!-- bootstarp core js -->
 		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/bootstrap.min.js"></script>
 		<script src="<?php echo Yii::app()->theme->baseUrl ?>/js/bootstrap-table.js"></script>
+
 
 		<style type="text/css">
 			body{
@@ -56,7 +55,7 @@
 
 							array('label'=>'<i class="fa fa-users"></i> 組織', 'url'=>array('/group/'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>'<i class="fa fa-tasks"></i> 網址', 'url'=>array('/siteurl/'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'<i class="fa fa-floppy-o"></i> 記錄查詢', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>'<i class="fa fa-floppy-o"></i> 手動執行', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>'<i class="fa fa-cog"></i>管理登入', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),							
 							array('label'=>'登出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 						),

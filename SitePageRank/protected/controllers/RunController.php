@@ -17,16 +17,22 @@ class RunController extends Controller
 		//$GUID = $this->GUID();
 //		$timestamp= getTimestamp();
 
-		$taskModel=$model=new Task;
+		$taskModel=new Task;
 		$date = new DateTime();
 		$taskModel->attributes = array
             (
-            	'date'=> $date->format( 'U' ),
+            	'date'=> $date->format("Y-m-d H:i:s"),
             );
         $taskModel->save();
         $taskID=$taskModel->getPrimaryKey();
 
-		$dataProvider = new CActiveDataProvider('SiteUrl');
+		$dataProvider = new CActiveDataProvider(
+			SiteUrl::model(),
+			array(
+				'pagination' => false
+				)
+		);
+
 		echo '資料庫共'.$dataProvider->totalItemCount.'筆資料'."\r\n";
 		$i=0;
 		foreach ($dataProvider->getData() as $record) {
@@ -97,7 +103,7 @@ class RunController extends Controller
 			            //echo $site;
 
 			            //系統延遲
-			            sleep(2);
+			            sleep(5);
 			            $now   = new DateTime;
 			            
 			            echo("[log]".$now->format( 'Y-m-d H:i:s' )."搜尋".$site."有".$results.'項結果 '."\r\n");

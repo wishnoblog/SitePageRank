@@ -379,6 +379,8 @@
             order = this.options.sortOrder === 'desc' ? -1 : 1,
             index = $.inArray(this.options.sortName, this.header.fields);
 
+            //alert( this.header.fields);
+
         if (index !== -1) {
             var sorter = this.header.sorters[index];
             this.data.sort(function (a, b) {
@@ -390,7 +392,6 @@
                 }
 
                 if (a[name] === b[name]) {
-                    return 0;
                 }
                 if (a[name] < b[name]) {
                     return order * -1;
@@ -970,6 +971,7 @@
                     data = res.rows;
                 }
                 that.load(data);
+                
                 that.trigger('load-success', data);
             },
             error: function (res) {
