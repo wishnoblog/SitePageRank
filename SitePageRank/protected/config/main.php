@@ -52,6 +52,7 @@ return array(
 				
 				'排名/Getjson' => 'Data/Getjson',
 				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
+				'cron/<id:\w+>'=>'run/GetData/'
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
