@@ -10,7 +10,7 @@ return array(
 	'name'=>'高應大網站資訊統計系統',
 	'theme'=>'bootstrap',
 	'language'=>'zh_TW',
-	'defaultController' => 'Data/rank', 
+	//'defaultController' => 'Data/rank', 
 
 
 	// preloading 'log' component
@@ -48,6 +48,8 @@ return array(
 				'Getjsonbyid/<id:\d+>'=> 'Data/Getjsonbyid/',
 				'Getjson'=> 'Data/Getjson',
 				'排名'   => 'Data/Rank',
+				'排名/getJsonDetailbyid/<id:\d+>' => 'Data/getJsonDetailbyid/',
+				
 				'排名/Getjson' => 'Data/Getjson',
 				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

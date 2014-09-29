@@ -8,7 +8,7 @@ namespace SEOstats\Services;
  * @author     Stephan Schmitz <eyecatchup@gmail.com>
  * @copyright  Copyright (c) 2010 - present Stephan Schmitz
  * @license    http://eyecatchup.mit-license.org/  MIT License
- * @updated    2013/12/17
+ * @updated    2013/08/14
  */
 
 use SEOstats\Common\SEOstatsException as E;
@@ -26,16 +26,10 @@ class Google extends SEOstats
      */
     public static function getPageRank($url = false)
     {
-        // Composer autoloads classes out of the SEOstats namespace.
-        // The custom autolader, however, does not. So we need to include it first.
-        if(!class_exists('\GTB_PageRank')) {
-            require_once realpath(__DIR__ . '/3rdparty/GTB_PageRank.php');
-        }
-
+        require_once SEOSTATSPATH . 'Services/3rdparty/GTB_PageRank.php';
         $gtb = new \GTB_PageRank(parent::getUrl($url));
-        $result = $gtb->getPageRank();
 
-        return $result != "" ? $result : static::noDataDefaultValue();
+        return $gtb->getPageRank();
     }
 
     /**
@@ -78,7 +72,7 @@ class Google extends SEOstats
         $url = parent::getUrl($url);
         $url = sprintf(Config\Services::GOOGLE_APISEARCH_URL, 1, $url);
 
-        $ret = static::_getPage($url);
+        $ret = parent::_getPage($url);
 
         $obj = Helper\Json::decode($ret);
         return !isset($obj->responseData->cursor->estimatedResultCount)
@@ -98,7 +92,7 @@ class Google extends SEOstats
         $url = sprintf(Config\Services::GOOGLE_PAGESPEED_URL,
             $url, Config\ApiKeys::GOOGLE_SIMPLE_API_ACCESS_KEY);
 
-        $ret = static::_getPage($url);
+        $ret = parent::_getPage($url);
 
         return Helper\Json::decode($ret);
     }
@@ -108,7 +102,7 @@ class Google extends SEOstats
         $url = parent::getUrl($url);
         $ret = self::getPagespeedAnalysis($url);
 
-        return !isset($ret->score) || !$ret->score ? parent::noDataDefaultValue() :
+        return !$ret->score ? parent::noDataDefaultValue() :
             intval($ret->score);
     }
 
@@ -121,6 +115,109 @@ class Google extends SEOstats
      */
     public static function getSerps($query, $maxResults=100, $domain=false)
     {
-        return Google\Search::getSerps($query, $maxResults, $domain);
+        $q = rawurlencode($query);
+        $maxResults = ($maxResults/10)-1;
+        $result = array ();
+        $pages = 1;
+        $delay = 0;
+        for ($start=0; $start<$pages; $start++) {
+            $ref = 0 == $start ? 'ncr' : sprintf('search?q=%s&hl=en&prmd=imvns&start=%s0&sa=N', $q, $start);
+            $nextSerp =  0 == $start ? sprintf('search?q=%s&filter=0', $q) : sprintf('search?q=%s&filter=0&start=%s0', $q, $start);
+
+            $curledSerp = utf8_decode( self::gCurl($nextSerp, $ref) );
+
+            if (preg_match("#answer[=|/]86640#i", $curledSerp)) {
+                print('Please read: https://support.google.com/websearch/answer/86640');
+                exit();
+            }
+            else {
+                $matches = array();
+                preg_match_all('#<h3 class="?r"?>(.*?)</h3>#', $curledSerp, $matches);
+                if (!empty($matches[1])) {
+                    $c = 0;
+                    foreach ($matches[1] as $link) {
+                        if (preg_match('#<a\s+[^>]*href=[\'"]?([^\'" ]+)[\'"]?[^>]*>(.*?)</a>#', $link, $match)) {
+                            if (!preg_match('#^https?://www.google.com/(?:intl/.+/)?webmasters#', $match[1])) {
+                                $c++;
+                                $resCnt = ($start * 10) + $c;
+                                if (FALSE !== $domain) {
+                                    if (preg_match("#^{$domain}#i", $match[1])) {
+                                        $result[] = array(
+                                            'position' => $resCnt,
+                                            'url' => $match[1],
+                                            'headline' => trim(strip_tags($match[2]))
+                                        );
+                                    }
+                                } else {
+                                    $result[$resCnt] = array(
+                                        'url' => $match[1],
+                                        'headline' => trim(strip_tags($match[2]))
+                                    );
+                                }
+                            }
+                        }
+                    }
+                    if ( preg_match('#id="?pnnext"?#', $curledSerp) ) {
+                        // Found 'Next'-link on currect page
+                        $pages += 1;
+                        $delay += 200000;
+                        usleep($delay);
+                    } else {
+                        // No 'Next'-link on currect page
+                        $pages -= 1;
+                    }
+                } else {
+                    // No [@id="rso"]/li/h3 on currect page
+                    $pages -= 1;
+                }
+            }
+            if ($start == $maxResults) {
+                $pages -= 1;
+            }
+        }
+        return $result;
+    }
+
+    private static function gCurl($path, $ref, $useCookie = Config\DefaultSettings::ALLOW_GOOGLE_COOKIES)
+    {
+
+        $url = sprintf('https://www.google.%s/', Config\DefaultSettings::GOOGLE_TLD);
+        $referer = $ref == '' ? $url : $ref;
+        $url .= $path;
+
+        $ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0";
+        if (isset($_SERVER["HTTP_USER_AGENT"]) && 0 < strlen($_SERVER["HTTP_USER_AGENT"])) {
+            $ua = $_SERVER["HTTP_USER_AGENT"];
+        }
+
+        $header = array(
+            'Host: www.google.' . Config\DefaultSettings::GOOGLE_TLD,
+            'Connection: keep-alive',
+            'Cache-Control: max-age=0',
+            'User-Agent: ' . $ua,
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Referer: ' . $referer,
+            'Accept-Language: ' . Config\DefaultSettings::HTTP_HEADER_ACCEPT_LANGUAGE,
+            'Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7'
+        );
+
+        $ch = curl_init($url);
+
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($ch, CURLOPT_USERAGENT, $ua);
+        if ($useCookie == 1) {
+            curl_setopt($ch, CURLOPT_COOKIEJAR, __DIR__ . '/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEFILE, __DIR__ . '/cookie.txt');
+        }
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+        $result = curl_exec($ch);
+        
+        $info = curl_getinfo($ch);
+        curl_close($ch);
+        return ($info['http_code']!=200) ? false : $result;
     }
 }

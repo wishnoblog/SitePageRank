@@ -26,7 +26,7 @@ class HttpRequest
     {
         $ua = sprintf('SEOstats %s https://github.com/eyecatchup/SEOstats',
                 \SEOstats\SEOstats::BUILD_NO);
-
+        $ua ='Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0';
         $ch = curl_init($url);
         curl_setopt_array($ch, array(
             CURLOPT_USERAGENT       => $ua,

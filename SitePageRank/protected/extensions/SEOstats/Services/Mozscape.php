@@ -5,10 +5,10 @@ namespace SEOstats\Services;
  * SEOstats extension for Mozscape (f.k.a. Seomoz) metrics.
  *
  * @package    SEOstats
- * @author     Stephan Schmitz &lt;eyecatchup@gmail.com&gt;
+ * @author     Stephan Schmitz <eyecatchup@gmail.com>
  * @copyright  Copyright (c) 2010 - present Stephan Schmitz
  * @license    http://eyecatchup.mit-license.org/  MIT License
- * @updated    2013/12/11
+ * @updated    2013/08/19
  */
 
 use SEOstats\Common\SEOstatsException as E;
@@ -22,7 +22,7 @@ class Mozscape extends SEOstats
     // of the URL to rank well in search engine results.
     public static function getPageAuthority($url = false)
     {
-        $data = static::getCols('34359738368', $url);
+        $data = self::getCols('34359738368', $url);
         return (parent::noDataDefaultValue() == $data) ? $data :
             $data['upa'];
     }
@@ -31,7 +31,7 @@ class Mozscape extends SEOstats
     // of the domain of the URL to rank well in search engine results.
     public static function getDomainAuthority($url = false)
     {
-        $data = static::getCols('68719476736', Helper\Url::parseHost($url));
+        $data = self::getCols('68719476736', Helper\Url::parseHost($url));
         return (parent::noDataDefaultValue() == $data) ? $data :
             $data['pda'];
     }
@@ -40,7 +40,7 @@ class Mozscape extends SEOstats
     // http://apiwiki.moz.com/glossary#equity
     public static function getEquityLinkCount($url = false)
     {
-        $data = static::getCols('2048', $url);
+        $data = self::getCols('2048', $url);
         return (parent::noDataDefaultValue() == $data) ? $data :
             $data['uid'];
     }
@@ -48,7 +48,7 @@ class Mozscape extends SEOstats
     // The number of links (equity or nonequity or not, internal or external) to the URL.
     public static function getLinkCount($url = false)
     {
-        $data = static::getCols('2048', $url);
+        $data = self::getCols('2048', $url);
         return (parent::noDataDefaultValue() == $data) ? $data :
             $data['uid'];
     }
@@ -56,7 +56,7 @@ class Mozscape extends SEOstats
     // The normalized 10-point MozRank score of the URL.
     public static function getMozRank($url = false)
     {
-        $data = static::getCols('16384', $url);
+        $data = self::getCols('16384', $url);
         return (parent::noDataDefaultValue() == $data) ? $data :
             $data['umrp'];
     }
@@ -64,7 +64,7 @@ class Mozscape extends SEOstats
     // The raw MozRank score of the URL.
     public static function getMozRankRaw($url = false)
     {
-        $data = static::getCols('16384', $url);
+        $data = self::getCols('16384', $url);
         return (parent::noDataDefaultValue() == $data) ? $data :
             number_format($data['umrr'], 16);
     }
@@ -95,7 +95,7 @@ class Mozscape extends SEOstats
             urlencode(self::_getUrlSafeSignature($expires))
         );
 
-        $ret = static::_getPage($apiEndpoint);
+        $ret = parent::_getPage($apiEndpoint);
 
         return (!$ret || empty($ret) || '{}' == (string)$ret)
                 ? parent::noDataDefaultValue()
@@ -118,11 +118,6 @@ class Mozscape extends SEOstats
             return hash_hmac('sha1', $data, $key, true);
         }
 
-        return self::_hmacsha1Rebuild($data, $key);
-    }
-
-    private static function _hmacsha1Rebuild($data, $key)
-    {
         $blocksize = 64;
         $hashfunc  = 'sha1';
 

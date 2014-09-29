@@ -1,14 +1,8 @@
 <?php
 /* @var $this DataController */
-/* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'排名',
-);
+$this->pageTitle='排名 - '.Yii::app()->name;
 
-$this->menu=array(
-
-);
 ?>
 
 <h1>各單位及系所排名 <small>網站資訊統計系統</small></h1>
@@ -21,10 +15,10 @@ $this->menu=array(
         
 
         <div class="form-group">
-           <h3>時間調整</h3>
+           <h3>統計時間選擇</h3>
            <?php 
                
-                 $fa=Task::model()->findAll(array('order'=>'TaskID DESC'));
+                 $fa=Task::model()->findAll(array('order'=>'TaskID DESC', 'limit' => 10,));
                  //print(arg)
                  //public static array listData(array $models, string $valueField, string $textField, string $groupField='')
                  $ld=CHtml::listData($fa,'TaskID','date');
@@ -36,8 +30,15 @@ $this->menu=array(
              <div class="panel-heading"><i class="fa fa-book"></i> 說明</div>
              <div class="panel-body">
                <ul>
-                   <li>排名 <i class="fa fa-line-chart"></i> 欄位為依照Google Index數量排，被Index的頁面越多排序越高。</li>
-                   <li>Google Index Statues <i class="fa fa-database"></i> 為Google索引您網站的數量，請參閱<a href="https://support.google.com/webmasters/answer/2642366?hl=en" target="_blank">說明</a></li>
+                   <li> <i class="fa fa-line-chart"></i> 排名欄位為依據 <img src="../images/icon-google.png" alt="Google">頁面索引量，數據越高代表頁面數越多，請參閱
+                            <a href="https://support.google.com/webmasters/answer/2642366?hl=en" target="_blank">說明</a>。
+                        </li>
+                   <li>
+                        <img src="../images/icon-google.png" alt="Google">PR 為Google對每個網站的評分，請參閱<a href="http://zh.wikipedia.org/zh-tw/PageRank" target="_blank">說明</a>
+                   </li>
+                   <li>
+                        <img src="../images/icon-google.png" alt="Google">反向連結 為Google取得的其他網站連結到您網站的數量</a>
+                   </li>
                </ul>
              </div>
            </div>
@@ -45,17 +46,45 @@ $this->menu=array(
         </div>
     
     <div class="col-md-9">
-        <table id="table"  data-sort-order="asc"  data-search="true">
-            <thead>
-                <tr>
-                    <th data-field="Rank" data-sortable="true" style="width : 30px;">排名 <i class="fa fa-line-chart"></i></th>
-                    <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Google Index Statues <i class="fa fa-database"></i></th>
-                    <th data-field="type" data-align="center"  data-halign="center" data-sortable="true" style="width : 50px;">組織類型 <i class="fa fa-sitemap"></i></th>
-                    <th data-field="name" data-align="center"  data-halign="center" style="width : 50px;">名稱 <i class="fa fa-flag"></i></th>
-                    
-                </tr>
-            </thead>
-        </table>
+        <div>
+            <table id="table"  data-sort-order="asc"  data-height="299"  data-search="true">
+                <thead>
+                    <tr>
+                        <th data-field="Rank" data-sortable="true" style="width : 30px;"><i class="fa fa-line-chart"> 排名</i></th>
+                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引量</i></th>
+                        <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
+                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
+                        <th data-field="alexa_rank" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa">  全球排名</i></th>
+                        <th data-field="alexa_rank_tw" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 台灣排名</i></th>
+                        <th data-field="alexa_link" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 外部連結數</th>
+
+                        <th data-field="type" data-align="center"  data-halign="center" data-sortable="true" style="width : 50px;"> <i class="fa fa-sitemap"></i> 類型</th>
+                        <th data-field="name" data-align="center"  data-halign="center" style="width : 50px;"><i class="fa fa-flag"> 名稱</i></th>
+                        
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div id='detail' style="margin-top:20px;">
+            <table id="table-detail"  data-sort-order="asc">
+                <thead>
+                    <tr>
+                        <th data-field="Rank" data-sortable="true" style="width : 30px;"><i class="fa fa-line-chart"> 排名</i></th>
+                        <th data-field="name"  style="width : 30px;"><i class="fa fa-line-chart"> 名稱</i></th>
+
+                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引量</i></th>
+                        <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
+                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
+                        <th data-field="alexa_rank" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa">  全球排名</i></th>
+                        <th data-field="alexa_rank_tw" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 台灣排名</i></th>
+                        <th data-field="alexa_link" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 外部連結數</th>
+
+          
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
   
 </div>
@@ -66,6 +95,25 @@ $( document ).ready(function() {
     $('#table').bootstrapTable({
         url: "<?php echo $data_url ?>"
     });
+    $('#detail').hide();
+
+
+            $('#table').bootstrapTable({
+            }).on('click-row.bs.table', function (e, row, $element) {
+                //alert("click");
+                //$result.text('Event: click-row.bs.table, data: ' + JSON.stringify(row));
+                //alert(row['id']);
+                var json = <?php echo '"' . Yii::app()->request->url . '/getJsonDetailbyid/"' ;?> + row['id'];
+                $('#table-detail').bootstrapTable('destroy');
+                $('#table-detail').bootstrapTable({
+                    url: json
+                });
+                $('#table-detail').bootstrapTable('load');
+                $('#table-detail').bootstrapTable('refresh');
+                $('#detail').show();
+
+            });
+
 });
 
 function changeTaskID() {
@@ -81,5 +129,8 @@ function changeTaskID() {
     $('#table').bootstrapTable('refresh');
     //$('#table').refresh();
     //alert("reflached");
-}    
+} 
+</script>
+<script>
+
 </script>

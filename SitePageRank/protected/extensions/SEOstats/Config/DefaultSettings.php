@@ -22,7 +22,7 @@ interface DefaultSettings
     const DEFAULT_RETURN_NO_DATA = 'n.a.';
 
     // The default top level domain ending to use to query Google.
-    const GOOGLE_TLD = 'com';
+    const GOOGLE_TLD = 'com.tw';
 
     // The HTTP header value for the 'Accept-Language' attribute.
     //
@@ -36,7 +36,7 @@ interface DefaultSettings
     // Thus, if you want to get the same results that you see when you search Google from
     // your browser, you must not only set the @const GOOGLE_TLD to your country specifiy TLD,
     // but also set the value below to be the same used by your browser!
-    const HTTP_HEADER_ACCEPT_LANGUAGE = 'en-us;q=0.8,en;q=0.3';
+    const HTTP_HEADER_ACCEPT_LANGUAGE = 'zh-tw,en-us;q=0.7,en;q=0.3';
 
     // For curl instances: Whether to allow Google to store cookies, or not.
     const ALLOW_GOOGLE_COOKIES = 0;
@@ -54,16 +54,4 @@ interface DefaultSettings
     //   uk - Google.co.uk (United Kingdom)
     //   us - Google.com (United States)
     const SEMRUSH_DB = 'us';
-
-    // Choose the local SISTRIX database to use.
-    // Valid values are:
-    //   de – Germany
-    //   at – Austria
-    //   ch – Switzerland
-    //   us – USA
-    //   uk – England
-    //   es – Spain
-    //   fr – France
-    //   it – Italy
-    const SISTRIX_DB = 'de';
 }

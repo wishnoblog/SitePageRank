@@ -111,21 +111,16 @@ class Alexa extends SEOstats
      */
     public static function getGlobalRank($url = false)
     {
-        /*
         self::setRankingKeys($url);
         if (0 == self::$_rankKeys['3m']) {
             return parent::noDataDefaultValue();
         }
-        */
 
         $xpath = self::_getXPath($url);
+        $nodes = @$xpath->query("//*[@id='rank']/table/tr[" . self::$_rankKeys['3m'] . "]/td[1]");
 
-        $xpathQueryList = array(
-            "//*[@id='traffic-rank-content']/div/span[2]/div[1]/span/span/div/strong",
-            "//*[@id='traffic-rank-content']/div/span[2]/div[1]/span/span/div/strong/a"
-        );
-
-        return static::parseDomByXpathsToIntegerWithoutTags($xpath, $xpathQueryList);
+        return !$nodes->item(0) ? parent::noDataDefaultValue() :
+            self::retInt( strip_tags($nodes->item(0)->nodeValue) );
     }
 
     /**
@@ -174,17 +169,10 @@ class Alexa extends SEOstats
     public static function getCountryRank($url = false)
     {
         $xpath = self::_getXPath($url);
-        $node1 = self::parseDomByXpaths($xpath, array(
-            "//*[@id='traffic-rank-content']/div/span[2]/div[2]/span/span/h4/a",
-            "//*[@id='traffic-rank-content']/div/span[2]/div[2]/span/span/h4/strong/a",
-        ));
+        $node1 = @$xpath->query("//*[@id='traffic-rank-content']/div/span[2]/div[2]/span/span/h4/strong/a");
+        $node2 = @$xpath->query("//*[@id='traffic-rank-content']/div/span[2]/div[2]/span/span/div/strong/a");
 
-        $node2 = self::parseDomByXpaths($xpath, array(
-            "//*[@id='traffic-rank-content']/div/span[2]/div[2]/span/span/div/strong/a",
-            "//*[@id='traffic-rank-content']/div/span[2]/div[2]/span/span/div/strong",
-        ));
-
-        if (!is_null($node2) && $node2->item(0)) {
+        if ($node2->item(0)) {
             $rank = self::retInt(strip_tags($node2->item(0)->nodeValue));
             if ($node1->item(0) && 0 != $rank) {
                 return array(
@@ -200,25 +188,19 @@ class Alexa extends SEOstats
     public static function getBacklinkCount($url = false)
     {
         $xpath = self::_getXPath($url);
+        $nodes = @$xpath->query("//*[@id='linksin_div']/section/div/div[1]/span");
 
-        $queryList = array(
-            "//section[@class='row-fluid panel-wrapper '][6]/section/div/span/div/span",
-            "//*[@id='linksin_div']/section/div/div[1]/span"
-        );
-
-        return static::parseDomByXpathsToInteger($xpath, $queryList);
+        return !$nodes->item(0) ? parent::noDataDefaultValue() :
+            self::retInt($nodes->item(0)->nodeValue);
     }
 
     public static function getPageLoadTime($url = false)
     {
         $xpath = self::_getXPath($url);
+        $nodes = @$xpath->query( "//*[@id='section-load']/div/section/p" );
 
-        $queryList = array(
-            "//section[@class='row-fluid panel-wrapper '][9]/section/p",
-            "//*[@id='section-load']/div/section/p"
-        );
-
-        return static::parseDomByXpathsWithoutTags($xpath, $queryList);
+        return !$nodes->item(0) ? parent::noDataDefaultValue() :
+            strip_tags($nodes->item(0)->nodeValue);
     }
 
     /**
@@ -253,13 +235,13 @@ class Alexa extends SEOstats
     /**
      * @return DOMXPath
      */
-    protected static function _getXPath($url) {
+    private static function _getXPath($url) {
         $url = parent::getUrl($url);
         if (parent::getLastLoadedUrl() == $url && self::$_xpath) {
             return self::$_xpath;
         }
 
-        $html  = static::_getAlexaPage($url);
+        $html  = self::_getAlexaPage($url);
         $doc   = parent::_getDOMDocument($html);
         $xpath = parent::_getDOMXPath($doc);
 
@@ -268,91 +250,18 @@ class Alexa extends SEOstats
         return $xpath;
     }
 
-    protected static function _getAlexaPage($url)
+    private static function _getAlexaPage($url)
     {
         $domain  = Helper\Url::parseHost($url);
         $dataUrl = sprintf(Config\Services::ALEXA_SITEINFO_URL, $domain);
-        $html    = static::_getPage($dataUrl);
+        $html    = parent::_getPage($dataUrl);
         return $html;
     }
 
-    protected static function retInt($str)
+    private static function retInt($str)
     {
         $strim = trim(str_replace(',', '', $str));
         $intStr = 0 < strlen($strim) ? $strim : '0';
         return intval($intStr);
-    }
-
-    /**
-     *
-     * @return mixed nodeValue
-     */
-    protected static function parseDomByXpaths($xpathDom, $xpathQueryList) {
-
-        foreach ( $xpathQueryList as $query ) {
-            $nodes = @$xpathDom->query($query);
-
-            if ( $nodes->length != 0 ) {
-                return $nodes;
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     *
-     * @return mixed nodeValue
-     */
-    protected static function parseDomByXpathsGetValue($xpathDom, $xpathQueryList)
-    {
-        $nodes = static::parseDomByXpaths($xpathDom, $xpathQueryList);
-
-        return ($nodes) ? $nodes->item(0)->nodeValue : null;
-    }
-
-    /**
-     *
-     * @return mixed nodeValue
-     */
-    protected static function parseDomByXpathsToInteger($xpathDom, $xpathQueryList)
-    {
-        $nodeValue = static::parseDomByXpathsGetValue($xpathDom, $xpathQueryList);
-
-        if ($nodeValue === null) {
-            return parent::noDataDefaultValue();
-        }
-        return self::retInt( $nodeValue );
-    }
-
-    /**
-     *
-     * @return mixed nodeValue
-     */
-    protected static function parseDomByXpathsWithoutTags($xpathDom, $xpathQueryList)
-    {
-
-        $nodeValue = static::parseDomByXpathsGetValue($xpathDom, $xpathQueryList);
-
-        if ($nodeValue === null) {
-            return parent::noDataDefaultValue();
-        }
-
-        return strip_tags($nodeValue);
-    }
-
-    /**
-     *
-     * @return mixed nodeValue
-     */
-    protected static function parseDomByXpathsToIntegerWithoutTags($xpathDom, $xpathQueryList)
-    {
-        $nodeValue = static::parseDomByXpathsGetValue($xpathDom, $xpathQueryList);
-
-        if ($nodeValue === null) {
-            return parent::noDataDefaultValue();
-        }
-
-        return self::retInt(strip_tags($nodeValue));
     }
 }

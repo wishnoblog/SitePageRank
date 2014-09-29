@@ -28,7 +28,7 @@ class DataController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','GetJson','GetJsonByID','Rank'),
+				'actions'=>array('index','view','GetJson','GetJsonByID','GetJsonDetailByID','Rank'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -118,14 +118,7 @@ class DataController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
-	/**
-	 * 取得執行順序。
-	 */
-	public function actionGetTaskList()
-	{
 
-
-	}
 	/**
 	 * Get json
 	 */
@@ -138,7 +131,10 @@ class DataController extends Controller
 
 
 	}
-		public function actionGetJsonByID($id)
+	/**
+	 * 取得特定時間(Taskid)資料
+	 */
+	public function actionGetJsonByID($id)
 	{
 		if(floor($id) == $id)
 		{
@@ -152,9 +148,28 @@ class DataController extends Controller
 			}
 		};
 	}
+	/**
+	 * 取得群組的更詳細資料
+	 */
+	public function actionGetJsonDetailByID($id)
+	{
+
+		if(Yii::app()->session['TaskID']);
+		{
+			//檢查ID是否存在
+			if(Group::model()->exists('groupid = :groupid', array(":groupid"=>$id)))
+			{
+				echo $this->getJsonDetail(Yii::app()->session['TaskID'],$id);
+			}else
+			{
+				echo "error";
+			}
+		};
+	}
+
 
 	/**
-	 * 產生Json
+	 * 產生總和的Json
 	 */
 	private function getJson($id)
 	{
@@ -165,8 +180,15 @@ class DataController extends Controller
 							`group`.`type`, 
 							`group`.`name`, 
 
-							SUM(`data`.`GoogleData`) AS 'Pages'
-							FROM
+							SUM(`data`.`alexa_rank`) AS 'alexa_rank',
+                    		AVG(`data`.`alexa_rank_tw`) AS 'alexa_rank_tw',
+                    		SUM(`data`.`alexa_link`) AS 'alexa_link',
+							SUM(`data`.`GoogleData`) AS 'Pages',
+							SUM(`data`.`google_backlink`) AS 'google_backlink',
+                    		AVG(`data`.`google_page_rank`) AS 'PR'
+
+
+							                   							FROM
 							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
 							JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
 
@@ -187,16 +209,84 @@ class DataController extends Controller
 
 				$new_value=array(
 					'id'=>$value['id'],
+
 					'Rank'=>intval($value['Rank']),
 					'Pages'=>intval($value['Pages']),
+					'alexa_rank'=>intval($value['alexa_rank']),
+					'alexa_rank_tw'=>intval($value['alexa_rank_tw']),
+					'alexa_link'=>intval($value['alexa_link']),
+					'PR'=>intval($value['PR']),
+					'google_backlink'=>intval($value['google_backlink']),
+
 					'name'=>$value['name'],
 					'type'=>$value['type'],
 					);
 				array_push($rows2,$new_value);
 			}
+			Yii::app()->session['TaskID'] = $id;
 			return CJSON::encode($rows2);
 	}
-	
+	/**
+	 * 取得特定組織底下查詢資料的Json
+	 */	
+	private function getJsonDetail($TaskID,$groupid)
+	{
+		
+			$sql="SELECT @rownum := @rownum+1 AS 'Rank', a.*
+				FROM (
+				SELECT 
+
+							`site_url`.`name`, 
+							`site_url`.`site`,
+							(`data`.`alexa_rank`) AS 'alexa_rank',
+                    		(`data`.`alexa_rank_tw`) AS 'alexa_rank_tw',
+                    	    (`data`.`alexa_link`) AS 'alexa_link',
+							(`data`.`GoogleData`) AS 'Pages',
+							(`data`.`google_backlink`) AS 'google_backlink',
+                    		(`data`.`google_page_rank`) AS 'PR'
+
+
+							FROM
+							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+
+							WHERE TaskID=".$TaskID." and `site_url`.`groupid`=".$groupid."
+
+
+							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r ";	
+			 
+
+			$connection=Yii::app()->db;  
+			$command=$connection->createCommand($sql);
+			$rows=$command->queryAll();   
+
+			//形態轉換，將需要成為數字的轉成正確的數字
+			$rows2=array();
+
+			//print_r($sql);
+			foreach($rows as $value){
+
+				$new_value=array(
+					//'id'=>$value['id'],
+					//附加連結
+					'name'=>'<a href="' . $value['site'] .'" taget="_blank">'.$value['name'].'</a>',
+
+					'site'=>$value['site'],
+
+
+					'Rank'=>intval($value['Rank']),
+					'Pages'=>intval($value['Pages']),
+					'alexa_rank'=>intval($value['alexa_rank']),
+					'alexa_rank_tw'=>intval($value['alexa_rank_tw']),
+					'alexa_link'=>intval($value['alexa_link']),
+					'PR'=>intval($value['PR']),
+					'google_backlink'=>intval($value['google_backlink']),
+
+										//'type'=>$value['type'],
+					);
+				array_push($rows2,$new_value);
+			}
+			return CJSON::encode($rows2);
+	}	
 	/**
 	 * Lists all models.
 	 */

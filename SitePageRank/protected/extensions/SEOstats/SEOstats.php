@@ -17,7 +17,7 @@ use SEOstats\Services as Service;
  *  @author      Stephan Schmitz <eyecatchup@gmail.com>
  *  @copyright   Copyright (c) 2010 - present Stephan Schmitz
  *  @license     http://eyecatchup.mit-license.org
- *  @version     CVS: $Id: SEOstats.php, v2.5.2 Rev 31 2013/08/14 13:57:17 ssc Exp $
+ *  @version     CVS: $Id: SEOstats.php, v2.5.3 Rev 32 2013/08/19 13:57:17 ssc Exp $
  *  @link        https://github.com/eyecatchup/SEOstats/
  *  ================================================================================
  *  LICENSE: Permission is hereby granted, free of charge, to any person obtaining
@@ -166,7 +166,7 @@ class SEOstats
     {
         return Helper\Url::parseHost(self::getUrl($url));
     }
-        
+	
     public static function getDomain($url = false)
     {
         return 'http://' . self::getHost($url = false);

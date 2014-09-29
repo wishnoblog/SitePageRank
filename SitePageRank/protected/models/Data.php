@@ -7,6 +7,11 @@
  * @property string $DataID
  * @property integer $SiteID
  * @property string $GoogleData
+ * @property integer $google_page_rank
+ * @property string $google_backlink
+ * @property string $alexa_rank
+ * @property string $alexa_rank_tw
+ * @property string $alexa_link
  * @property string $Time
  * @property integer $YY
  * @property integer $MM
@@ -34,12 +39,14 @@ class Data extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('SiteID, Time, YY, MM, DD', 'required'),
-			array('SiteID, YY, MM, DD', 'numerical', 'integerOnly'=>true),
-			array('GoogleData, TaskID', 'length', 'max'=>20),
+			array('SiteID, YY, MM, DD', 'required'),
+			array('SiteID, google_page_rank, YY, MM, DD', 'numerical', 'integerOnly'=>true),
+			array('GoogleData, google_backlink, alexa_rank, alexa_rank_tw, TaskID', 'length', 'max'=>20),
+			array('alexa_link', 'length', 'max'=>11),
+			array('Time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('DataID, SiteID, GoogleData, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
+			array('DataID, SiteID, GoogleData, google_page_rank, google_backlink, alexa_rank, alexa_rank_tw, alexa_link, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +71,11 @@ class Data extends CActiveRecord
 			'DataID' => '資料ID',
 			'SiteID' => 'Site',
 			'GoogleData' => '取得資料',
+			'google_page_rank' => 'Google Page Rank',
+			'google_backlink' => 'Google Backlink',
+			'alexa_rank' => 'Alexa Rank',
+			'alexa_rank_tw' => 'Alexa Rank Tw',
+			'alexa_link' => 'Alexa Link',
 			'Time' => '記錄時間',
 			'YY' => '年',
 			'MM' => '月',
@@ -93,7 +105,12 @@ class Data extends CActiveRecord
 		$criteria->compare('DataID',$this->DataID,true);
 		$criteria->compare('SiteID',$this->SiteID);
 		$criteria->compare('GoogleData',$this->GoogleData,true);
-		$criteria->compare('Time',$this->Time);
+		$criteria->compare('google_page_rank',$this->google_page_rank);
+		$criteria->compare('google_backlink',$this->google_backlink,true);
+		$criteria->compare('alexa_rank',$this->alexa_rank,true);
+		$criteria->compare('alexa_rank_tw',$this->alexa_rank_tw,true);
+		$criteria->compare('alexa_link',$this->alexa_link,true);
+		$criteria->compare('Time',$this->Time,true);
 		$criteria->compare('YY',$this->YY);
 		$criteria->compare('MM',$this->MM);
 		$criteria->compare('DD',$this->DD);

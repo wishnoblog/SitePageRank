@@ -5422,3 +5422,399 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/index.php?r=%E6%8E%92%E5%90%8D
 ---
+2014/09/23 14:44:52 [error] [php] include(Alexa.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(58): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): RunController->actionIndex()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run/
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (58)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/23 14:56:13 [error] [php] include(Alexa.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(58): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): RunController->actionIndex()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run/
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (58)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/23 14:56:15 [error] [php] include(Alexa.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(58): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): RunController->actionIndex()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run/
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (58)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/23 14:57:16 [error] [php] include(GTB_PageRank.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Services/Google.php(31): class_exists()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(49): getPageRank()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): RunController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run/
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Services/Google.php (31)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (49)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/23 14:57:53 [error] [php] include(GTB_PageRank.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Services/Google.php(31): class_exists()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(46): getPageRank()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): RunController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run/
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Services/Google.php (31)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (46)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/23 16:34:04 [error] [exception.Exception] exception 'Exception' with message 'String could not be parsed as XML' in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:175
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(175): SimpleXMLElement->__construct('')
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(126): RunController->get_rank_Alaxa('tm.kuas.edu.tw/')
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php(38): RunController->GetSEOState()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): RunController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('')
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('run')
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/run/
+---
+2014/09/24 15:22:45 [error] [php] Missing argument 2 for CClientScript::registerCss(), called in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php on line 20 and defined (/Users/WiSH/projects/SitePageRank/framework/web/CClientScript.php:621)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): SiteController->renderFile()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php(33): SiteController->render()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): SiteController->runAction()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php (20)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php (33)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/24 15:44:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名//Getjson".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????//Getjson')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D//Getjson
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D/
+---
+2014/09/24 15:47:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名//Getjson".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????//Getjson')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D//Getjson
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D/
+---
+2014/09/24 15:47:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名//Getjson".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????//Getjson')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D//Getjson
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D/
+---
+2014/09/24 15:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名//Getjson".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????//Getjson')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D//Getjson
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D/
+---
+2014/09/24 16:11:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/24 16:52:06 [error] [php] Undefined variable: results (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:111)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (111)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (38)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/24 17:19:24 [error] [exception.CException] exception 'CException' with message '屬性 "DataController.actio" 未被定義.' in /Users/WiSH/projects/SitePageRank/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/main.php(45): CComponent->__get('actio')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(126): require('/Users/WiSH/pro...')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/WiSH/pro...', Array, true)
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(784): CBaseController->renderFile('/Users/WiSH/pro...', Array, true)
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(222): CController->render('index')
+#5 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionRank()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Rank')
+#15 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Rank')
+#16 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D
+HTTP_REFERER=http://googleget:8888/index.php
+---
+2014/09/25 10:22:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "getJsonDetail" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('getJsonDetail')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getJsonDetail')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/getJsonDet...')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/getJsonDetail/15
+---
+2014/09/25 10:26:23 [error] [php] Undefined variable: groupid (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php:167)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/getJsonDetailbyid/11
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (167)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/25 10:31:09 [error] [php] Undefined index: id (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php:276)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): DataController->runAction()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): DataController->filterAccessControl()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): DataController->runActionWithFilters()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): DataController->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/getJsonDetailbyid/14
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (276)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (169)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/25 10:34:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/10
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/10
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/10
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/12
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/12
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/6
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/6
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/39
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 10:35:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "排名/GetjsonDetailbyid".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('??????/GetjsonD...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/GetjsonDetailbyid/39
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---
+2014/09/25 16:20:17 [error] [php] include(Site.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php(51): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(126): require()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): SiteController->renderFile()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): SiteController->renderPartial()
+#5 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php(33): SiteController->render()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): SiteController->runAction()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php (51)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php (33)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/25 16:20:36 [error] [php] include(Site_url.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Users/WiSH/projects/SitePageRank/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php(51): spl_autoload_call()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(126): require()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): SiteController->renderFile()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): SiteController->renderPartial()
+#5 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php(33): SiteController->render()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): SiteController->runAction()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php (51)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php (33)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
