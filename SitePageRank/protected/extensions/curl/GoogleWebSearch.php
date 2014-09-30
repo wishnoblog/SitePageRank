@@ -22,7 +22,7 @@ class GoogleWebSearch {
         $httpReq -> setUrl($url);
         $content = $httpReq -> submit();
         unset($httpReq);
-		print_r($content);
+		//print_r($content);
         //var $results;
         //$pat;
         // 分析原始碼並取得每個項目

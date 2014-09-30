@@ -5915,3 +5915,79 @@ REQUEST_URI=/index.php/run
 in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (120)
 in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (40)
 in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/30 16:17:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+							ORDER BY  Pages desc ) a , (SELECT @rownum :=' at line 22. The SQL statement executed was: SELECT @rownum := @rownum+1 AS 'Rank', a.*
+				FROM (
+				SELECT 
+							`group`.`groupid` AS 'id',
+							`group`.`type`, 
+							`group`.`name`, 
+
+							SUM(`data`.`alexa_rank`) AS 'alexa_rank',
+                    		AVG(`data`.`alexa_rank_tw`) AS 'alexa_rank_tw',
+                    		SUM(`data`.`alexa_link`) AS 'alexa_link',
+							SUM(`data`.`GoogleData`) AS 'Pages',
+							SUM(`data`.`google_backlink`) AS 'google_backlink',
+                    		AVG(`data`.`google_page_rank`) AS 'PR'
+
+
+							                   							FROM
+							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+							JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+
+							WHERE TaskID=
+
+							GROUP BY `group`.`groupid`
+
+							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r;  .
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (204)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php (129)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/30 16:17:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 無法執行 SQL 陳述: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY `group`.`groupid`
+
+							ORDER BY  Pages desc ) a , (SELECT @rownum :=' at line 22. The SQL statement executed was: SELECT @rownum := @rownum+1 AS 'Rank', a.*
+				FROM (
+				SELECT 
+							`group`.`groupid` AS 'id',
+							`group`.`type`, 
+							`group`.`name`, 
+
+							SUM(`data`.`alexa_rank`) AS 'alexa_rank',
+                    		AVG(`data`.`alexa_rank_tw`) AS 'alexa_rank_tw',
+                    		SUM(`data`.`alexa_link`) AS 'alexa_link',
+							SUM(`data`.`GoogleData`) AS 'Pages',
+							SUM(`data`.`google_backlink`) AS 'google_backlink',
+                    		AVG(`data`.`google_page_rank`) AS 'PR'
+
+
+							                   							FROM
+							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
+							JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
+
+							WHERE TaskID=
+
+							GROUP BY `group`.`groupid`
+
+							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r;  ' in /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(204): CDbCommand->queryAll()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(129): DataController->getJson(false)
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): DataController->actionGetJson()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Getjson')
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Getjson')
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/Getjson
+HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
+---

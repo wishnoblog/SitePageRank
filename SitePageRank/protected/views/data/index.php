@@ -75,9 +75,10 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                         <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引</i></th>
                         <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
                         <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
-                        <th data-field="FB_share_count" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-facebook-square"></i> FB分享數</th>
-                        <th data-field="LinkedInShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-linkedin"></i> linkedin</th>
-                        <th data-field="GooglePlusShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-google-plus"></i> Google+</th>
+                        <th data-field="FB_share_count" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-facebook.png" alt="facebook">分享數</th>
+                        <th data-field="LinkedInShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-linkedin.png" alt="linkdin"></i> linkedin</th>
+                        <th data-field="GooglePlusShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-googleplus.png" alt="G+"> Google+</th>
+
                     </tr>
                 </thead>
             </table>
