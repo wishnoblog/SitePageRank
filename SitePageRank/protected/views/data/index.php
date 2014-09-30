@@ -51,16 +51,16 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                 <thead>
                     <tr>
                         <th data-field="Rank" data-sortable="true" style="width : 30px;"><i class="fa fa-line-chart"> 排名</i></th>
+                        <th data-field="name" data-align="center"  data-halign="center" style="width : 50px;"><i class="fa fa-flag"> 名稱</i></th>
+                
+                        <th data-field="type" data-align="center"  data-halign="center" data-sortable="true" style="width : 50px;"> <i class="fa fa-sitemap"></i> 類型</th>
+                
                         <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引量</i></th>
                         <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
                         <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
-                        <th data-field="alexa_rank" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa">  全球排名</i></th>
-                        <th data-field="alexa_rank_tw" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 台灣排名</i></th>
-                        <th data-field="alexa_link" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 外部連結數</th>
+                      
 
-                        <th data-field="type" data-align="center"  data-halign="center" data-sortable="true" style="width : 50px;"> <i class="fa fa-sitemap"></i> 類型</th>
-                        <th data-field="name" data-align="center"  data-halign="center" style="width : 50px;"><i class="fa fa-flag"> 名稱</i></th>
-                        
+                         
                     </tr>
                 </thead>
             </table>
@@ -70,17 +70,14 @@ $this->pageTitle='排名 - '.Yii::app()->name;
             <table id="table-detail"  data-sort-order="asc">
                 <thead>
                     <tr>
-                        <th data-field="Rank" data-sortable="true" style="width : 30px;"><i class="fa fa-line-chart"> 排名</i></th>
-                        <th data-field="name"  style="width : 30px;"><i class="fa fa-line-chart"> 名稱</i></th>
+                        <th data-field="name"  style="width : 30px;"><i class="fa fa-flag"> 網站</i></th>
 
-                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引量</i></th>
+                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引</i></th>
                         <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
                         <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
-                        <th data-field="alexa_rank" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa">  全球排名</i></th>
-                        <th data-field="alexa_rank_tw" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 台灣排名</i></th>
-                        <th data-field="alexa_link" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-alexa.png" alt="Alexa"> 外部連結數</th>
-
-          
+                        <th data-field="FB_share_count" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-facebook-square"></i> FB分享數</th>
+                        <th data-field="LinkedInShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-linkedin"></i> linkedin</th>
+                        <th data-field="GooglePlusShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-google-plus"></i> Google+</th>
                     </tr>
                 </thead>
             </table>

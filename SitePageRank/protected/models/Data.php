@@ -6,12 +6,24 @@
  * The followings are the available columns in table 'data':
  * @property string $DataID
  * @property integer $SiteID
+ * @property string $filetime
+ * @property integer $robot
+ * @property integer $sitemap
  * @property string $GoogleData
  * @property integer $google_page_rank
  * @property string $google_backlink
  * @property string $alexa_rank
  * @property string $alexa_rank_tw
  * @property string $alexa_link
+ * @property string $GooglePlusShares
+ * @property string $TwitterShares
+ * @property string $Facebook
+ * @property string $FB_share_count
+ * @property string $FB_like_count
+ * @property string $FB_comment_count
+ * @property string $FB_commentsbox_count
+ * @property string $FB_click_count
+ * @property string $LinkedInShares
  * @property string $Time
  * @property integer $YY
  * @property integer $MM
@@ -40,13 +52,13 @@ class Data extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('SiteID, YY, MM, DD', 'required'),
-			array('SiteID, google_page_rank, YY, MM, DD', 'numerical', 'integerOnly'=>true),
-			array('GoogleData, google_backlink, alexa_rank, alexa_rank_tw, TaskID', 'length', 'max'=>20),
+			array('SiteID, robot, sitemap, google_page_rank, YY, MM, DD', 'numerical', 'integerOnly'=>true),
+			array('GoogleData, google_backlink, alexa_rank, alexa_rank_tw, GooglePlusShares, TwitterShares, Facebook, FB_share_count, FB_like_count, FB_comment_count, FB_commentsbox_count, FB_click_count, LinkedInShares, TaskID', 'length', 'max'=>20),
 			array('alexa_link', 'length', 'max'=>11),
-			array('Time', 'safe'),
+			array('filetime, Time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('DataID, SiteID, GoogleData, google_page_rank, google_backlink, alexa_rank, alexa_rank_tw, alexa_link, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
+			array('DataID, SiteID, filetime, robot, sitemap, GoogleData, google_page_rank, google_backlink, alexa_rank, alexa_rank_tw, alexa_link, GooglePlusShares, TwitterShares, Facebook, FB_share_count, FB_like_count, FB_comment_count, FB_commentsbox_count, FB_click_count, LinkedInShares, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,12 +82,24 @@ class Data extends CActiveRecord
 		return array(
 			'DataID' => '資料ID',
 			'SiteID' => 'Site',
+			'filetime' => 'Filetime',
+			'robot' => 'Robot',
+			'sitemap' => 'Sitemap',
 			'GoogleData' => '取得資料',
 			'google_page_rank' => 'Google Page Rank',
 			'google_backlink' => 'Google Backlink',
 			'alexa_rank' => 'Alexa Rank',
 			'alexa_rank_tw' => 'Alexa Rank Tw',
 			'alexa_link' => 'Alexa Link',
+			'GooglePlusShares' => 'Google Plus Shares',
+			'TwitterShares' => 'Twitter Shares',
+			'Facebook' => 'Facebook',
+			'FB_share_count' => 'Fb Share Count',
+			'FB_like_count' => 'Fb Like Count',
+			'FB_comment_count' => 'Fb Comment Count',
+			'FB_commentsbox_count' => 'Fb Commentsbox Count',
+			'FB_click_count' => 'Fb Click Count',
+			'LinkedInShares' => 'Linked In Shares',
 			'Time' => '記錄時間',
 			'YY' => '年',
 			'MM' => '月',
@@ -104,12 +128,24 @@ class Data extends CActiveRecord
 
 		$criteria->compare('DataID',$this->DataID,true);
 		$criteria->compare('SiteID',$this->SiteID);
+		$criteria->compare('filetime',$this->filetime,true);
+		$criteria->compare('robot',$this->robot);
+		$criteria->compare('sitemap',$this->sitemap);
 		$criteria->compare('GoogleData',$this->GoogleData,true);
 		$criteria->compare('google_page_rank',$this->google_page_rank);
 		$criteria->compare('google_backlink',$this->google_backlink,true);
 		$criteria->compare('alexa_rank',$this->alexa_rank,true);
 		$criteria->compare('alexa_rank_tw',$this->alexa_rank_tw,true);
 		$criteria->compare('alexa_link',$this->alexa_link,true);
+		$criteria->compare('GooglePlusShares',$this->GooglePlusShares,true);
+		$criteria->compare('TwitterShares',$this->TwitterShares,true);
+		$criteria->compare('Facebook',$this->Facebook,true);
+		$criteria->compare('FB_share_count',$this->FB_share_count,true);
+		$criteria->compare('FB_like_count',$this->FB_like_count,true);
+		$criteria->compare('FB_comment_count',$this->FB_comment_count,true);
+		$criteria->compare('FB_commentsbox_count',$this->FB_commentsbox_count,true);
+		$criteria->compare('FB_click_count',$this->FB_click_count,true);
+		$criteria->compare('LinkedInShares',$this->LinkedInShares,true);
 		$criteria->compare('Time',$this->Time,true);
 		$criteria->compare('YY',$this->YY);
 		$criteria->compare('MM',$this->MM);

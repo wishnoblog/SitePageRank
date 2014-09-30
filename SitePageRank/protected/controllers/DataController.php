@@ -243,14 +243,21 @@ class DataController extends Controller
                     	    (`data`.`alexa_link`) AS 'alexa_link',
 							(`data`.`GoogleData`) AS 'Pages',
 							(`data`.`google_backlink`) AS 'google_backlink',
-                    		(`data`.`google_page_rank`) AS 'PR'
+                    		(`data`.`google_page_rank`) AS 'PR',
+                    		`data`.`GooglePlusShares`,
+                    		`data`.`TwitterShares`,
+                    		`data`.`Facebook`,
+                    		`data`.`FB_share_count`,
+                    		`data`.`FB_like_count`,
+                    		`data`.`FB_commentsbox_count`,
+                    		`data`.`FB_click_count`,
+                    		`data`.`LinkedInShares`
 
 
 							FROM
 							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
 
 							WHERE TaskID=".$TaskID." and `site_url`.`groupid`=".$groupid."
-
 
 							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r ";	
 			 
@@ -280,6 +287,16 @@ class DataController extends Controller
 					'alexa_link'=>intval($value['alexa_link']),
 					'PR'=>intval($value['PR']),
 					'google_backlink'=>intval($value['google_backlink']),
+					'GooglePlusShares'=>intval($value['GooglePlusShares']),
+					'TwitterShares'=>intval($value['TwitterShares']),
+					'Facebook'=>intval($value['Facebook']),
+					'FB_share_count'=>intval($value['FB_share_count']),
+					'FB_like_count'=>intval($value['FB_like_count']),
+					'FB_commentsbox_count'=>intval($value['FB_commentsbox_count']),
+					'FB_like_count'=>intval($value['FB_like_count']),
+					'LinkedInShares'=>intval($value['LinkedInShares']),
+
+
 
 										//'type'=>$value['type'],
 					);

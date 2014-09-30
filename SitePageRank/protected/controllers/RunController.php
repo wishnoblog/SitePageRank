@@ -1,7 +1,9 @@
 <?php
-
+require_once realpath(Yii::app()->basePath . '/extensions/SEOstats/bootstrap.php');
+use \SEOstats\Services\Social as Social;
 class RunController extends Controller
 {
+
 	public function filters()
 	{
 		return array(
@@ -67,78 +69,101 @@ class RunController extends Controller
 		/**
 		 * 輸入的流程應該是->產生GUID及時間碼->存入Task及變數->
 		 */
-				require_once realpath(Yii::app()->basePath . '/extensions/SEOstats/bootstrap.php');
 
 
-				$taskModel=new Task;
-				$date = new DateTime();
-				$taskModel->attributes = array
-		            (
-		            	'date'=> $date->format("Y-m-d H:i:s"),
-		            );
-		        $taskModel->save();
-		        $taskID=$taskModel->getPrimaryKey();
 
-				$dataProvider = new CActiveDataProvider(
-					SiteUrl::model(),
-					array(
-						'pagination' => false
-						)
-				);
+		$taskModel=new Task;
+		$date = new DateTime();
+		$taskModel->attributes = array
+            (
+            	'date'=> $date->format("Y-m-d H:i:s"),
+            );
+        $taskModel->save();
+        $taskID=$taskModel->getPrimaryKey();
 
-				echo '資料庫共'.$dataProvider->totalItemCount.'筆資料'."\r\n";
-				$i=0;
-				foreach ($dataProvider->getData() as $record) {
-		            $site= $record -> site;
-		            $id = $record -> SiteID;
+		$dataProvider = new CActiveDataProvider(
+			SiteUrl::model(),
+			array(
+				'pagination' => false
+				)
+		);
 
-		            //移除前面的http:// (若有的話)
-		            $site = preg_replace('#^https?://#', '', $site);
-		            $site = preg_replace('#^http?://#', '', $site);
-		            
-		            
+		echo '資料庫共'.$dataProvider->totalItemCount.'筆資料'."\r\n";
+		$i=0;
+		foreach ($dataProvider->getData() as $record) {
+            $site= $record -> site;
+            $id = $record -> SiteID;
 
-		            //系統延遲
-		            sleep(2);
-		            $now = new DateTime;
-		            
-		            $pagerank = \SEOstats\Services\Google::getPageRank($site);
+            //移除前面的http:// (若有的話)
+            $site = preg_replace('#^https?://#', '', $site);
+            $site = preg_replace('#^http?://#', '', $site);
+            
+            
 
-		            //$results = \SEOstats\Services\Google::getSiteindexTotal('site:'.$site);
-		            $googleIds=$this->GetGoogleSearch('site:'.$site);
-		            sleep(2);
-		            $googleLinks=$this->GetGoogleSearch('link:'.$site); 
-		            echo("[log]".$now->format( 'Y-m-d H:i:s' )."搜尋".$site."有".$googleIds.'項結果 '."\r\n");
+            //系統延遲
 
-		            $model = new Data;
-		            $model->attributes=array
-		            (
-		            	'SiteID'=>$id,
-		             	'GoogleData'=>$googleIds,
-		             	'google_backlink'=>$googleLinks,
-		             	'Time' => $now->format( 'Y-m-d H:i:s' ),
-		             	'YY'=>$now->format( 'Y' ),
-		             	'MM'=>$now->format( 'm' ),
-		             	'DD'=>$now->format( 'd' ),
-		             	'TaskID'=>$taskID,
-		             	'google_page_rank'=>$pagerank,
-		             	'alexa_rank'=>$this->get_rank_Alaxa($site),
-		             	'alexa_rank_tw'=>$this->get_rank_Alaxa_tw($site),
-		             	'alexa_link'=>$this->get_rank_Alaxa_link($site),
+            $now = new DateTime;
+            
+            $pagerank = \SEOstats\Services\Google::getPageRank($site);
 
-		             	//'Time'=>$now->getTimestamp(),
-		            	);
-		            
-		            if($model->save())
-		            {
-		            	$i++;
-		            }else
-		            {
-		            	print_r($model->getErrors());	
-		            }
+            //$results = \SEOstats\Services\Google::getSiteindexTotal('site:'.$site);
+            $googleIds=$this->GetGoogleSearch('site:'.$site);
+            sleep(5);
+            $googleLinks=$this->GetGoogleSearch('link:'.$site); 
+            echo("[log]".$now->format( 'Y-m-d H:i:s' )."搜尋".$site."有".$googleIds.'項結果 '."\r\n");
 
-		        }
-				echo '執行完畢,共儲存'. $i .'筆資料';
+            //取得社群分享數據
+            
+            $seostats = new \SEOstats\SEOstats;
+            $seostats->setUrl("http://$site");
+			$fb=Social::getFacebookShares(); 
+			//print_r($fb);
+			
+			$info=$this->get_url_info($site);
+            $model = new Data;
+            $model->attributes=array
+            (
+            	'SiteID'=>$id,
+             	'GoogleData'=>$googleIds,
+             	'google_backlink'=>$googleLinks,
+             	
+             	'filetime'=>($info['filetime'] =! -1 ? date("Y-m-d H:i:s" , $info['filetime'] ) : null),
+             	'robot'=> $this->remoteFileExists("$site/robots.txt"),
+             	'sitemap'=> $this->remoteFileExists("$site/sitemap.xml"),
+             	'Time' => $now->format( 'Y-m-d H:i:s' ),
+             	'GooglePlusShares'=>Social::getGooglePlusShares(),
+             	'Facebook'=>$fb['total_count'],
+             	'FB_share_count'=>$fb['share_count'],
+             	'FB_like_count'=>$fb['like_count'],
+             	'FB_comment_count'=>$fb['comment_count'],
+             	'FB_commentsbox_count'=>$fb['commentsbox_count'],
+             	'FB_click_count'=>$fb['click_count'],
+             	'TwitterShares'=>Social::getTwitterShares(),
+             	'LinkedInShares'=>Social::getLinkedInShares(),
+             	'YY'=>$now->format( 'Y' ),
+             	'MM'=>$now->format( 'm' ),
+             	'DD'=>$now->format( 'd' ),
+             	'TaskID'=>$taskID,
+             	'google_page_rank'=>$pagerank,
+
+             	'alexa_rank'=>$this->get_rank_Alaxa($site),
+             	'alexa_rank_tw'=>$this->get_rank_Alaxa_tw($site),
+             	'alexa_link'=>$this->get_rank_Alaxa_link($site),
+
+        	);
+
+            //Yii::app()->end();
+            if($model->save())
+            {
+            	$i++;
+            }else
+            {
+            	print_r($model->getErrors());	
+            }
+            sleep(2);
+
+        }
+		echo '執行完畢,共儲存'. $i .'筆資料';
 	}
 	private function GetGoogleSearch($keyword)
 	{
@@ -151,97 +176,136 @@ class RunController extends Controller
 		return $results;
 
 	}
-	public function get_rank_Alaxa($url){
-				
-			$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$url;
+	private function get_rank_Alaxa($url){
+			
+		$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$url;
+	  
+		//Initialize the Curl  
+		$ch = curl_init();  
 		  
-			//Initialize the Curl  
-			$ch = curl_init();  
-			  
-			//Set curl to return the data instead of printing it to the browser.  
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-			curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2); 
-			  
-			//Set the URL  
-			curl_setopt($ch, CURLOPT_URL, $url);  
-			  
-			//Execute the fetch  
-			$data = curl_exec($ch);  
-			  
-			//Close the connection  
-			curl_close($ch);  
+		//Set curl to return the data instead of printing it to the browser.  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2); 
+		  
+		//Set the URL  
+		curl_setopt($ch, CURLOPT_URL, $url);  
+		  
+		//Execute the fetch  
+		$data = curl_exec($ch);  
+		  
+		//Close the connection  
+		curl_close($ch);  
+		
+		$xml = new SimpleXMLElement($data);  
+
+                //Get popularity node
+		$popularity = $xml->xpath("//POPULARITY");
+
+                //Get the Rank attribute
+		$rank = (string)$popularity[0]['TEXT']; 
+		
+		return $rank;
+	}
+
+	private function get_rank_Alaxa_tw($url){
 			
-			$xml = new SimpleXMLElement($data);  
+		$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$url;
+	  
+		//Initialize the Curl  
+		$ch = curl_init();  
+		  
+		//Set curl to return the data instead of printing it to the browser.  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2); 
+		  
+		//Set the URL  
+		curl_setopt($ch, CURLOPT_URL, $url);  
+		  
+		//Execute the fetch  
+		$data = curl_exec($ch);  
+		  
+		//Close the connection  
+		curl_close($ch);  
+		
+		$xml = new SimpleXMLElement($data);  
 
-	                //Get popularity node
-			$popularity = $xml->xpath("//POPULARITY");
+                //Get popularity node
+		$popularity = $xml->xpath("//COUNTRY");
 
-	                //Get the Rank attribute
-			$rank = (string)$popularity[0]['TEXT']; 
-			
-			return $rank;
-		}
-
-		public function get_rank_Alaxa_tw($url){
-					
-				$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$url;
-			  
-				//Initialize the Curl  
-				$ch = curl_init();  
-				  
-				//Set curl to return the data instead of printing it to the browser.  
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-				curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2); 
-				  
-				//Set the URL  
-				curl_setopt($ch, CURLOPT_URL, $url);  
-				  
-				//Execute the fetch  
-				$data = curl_exec($ch);  
-				  
-				//Close the connection  
-				curl_close($ch);  
+                //Get the Rank attribute
+		$rank = (string)$popularity[0]['RANK']; 
+		
+		return $rank;
+	}
+	public function get_rank_Alaxa_link($url){
 				
-				$xml = new SimpleXMLElement($data);  
+		$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$url;
+	  
+		//Initialize the Curl  
+		$ch = curl_init();  
+		  
+		//Set curl to return the data instead of printing it to the browser.  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2); 
 
-		                //Get popularity node
-				$popularity = $xml->xpath("//COUNTRY");
+		//Set the URL  
+		curl_setopt($ch, CURLOPT_URL, $url);  
+		  
+		//Execute the fetch  
+		$data = curl_exec($ch);  
+		  
+		//Close the connection  
+		curl_close($ch);  
+		
+		$xml = new SimpleXMLElement($data);  
 
-		                //Get the Rank attribute
-				$rank = (string)$popularity[0]['RANK']; 
-				
-				return $rank;
-			}
-			public function get_rank_Alaxa_link($url){
-						
-					$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$url;
-				  
-					//Initialize the Curl  
-					$ch = curl_init();  
-					  
-					//Set curl to return the data instead of printing it to the browser.  
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-					curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2); 
-					  
-					//Set the URL  
-					curl_setopt($ch, CURLOPT_URL, $url);  
-					  
-					//Execute the fetch  
-					$data = curl_exec($ch);  
-					  
-					//Close the connection  
-					curl_close($ch);  
-					
-					$xml = new SimpleXMLElement($data);  
+        //Get popularity node
+		$popularity = $xml->xpath("//LINKSIN");
 
-			                //Get popularity node
-					$popularity = $xml->xpath("//LINKSIN");
+        //Get the Rank attribute
+		$rank = (string)$popularity[0]['NUM']; 
+		
+		return $rank;
+	}
+	/**
+	 * 取得網頁最後更新時間
+	 */
+	private function get_url_info($url)
+	{
+		$curl = curl_init();
 
-			                //Get the Rank attribute
-					$rank = (string)$popularity[0]['NUM']; 
-					
-					return $rank;
-				}
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_NOBODY, true);
+		curl_setopt($curl, CURLOPT_HEADER, true);
+
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+		curl_setopt($curl, CURLOPT_FILETIME, true);
+
+		$result = curl_exec($curl);
+		// Get info
+		$info = curl_getinfo($curl);
+		//print_r($info);
+		return $info;
+	}
+	/**
+	 * 確認檔案是否存在
+	 */
+	private function remoteFileExists($url){
+		$curl = curl_init($url);
+	    curl_setopt($curl, CURLOPT_NOBODY, true);
+	    $result = curl_exec($curl);
+	    $ret = 0;
+	    if ($result !== 0) {
+	        $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);  
+	        if ($statusCode == 200) {
+	            $ret = 1;   
+	        }
+	    }
+	    curl_close($curl);
+	    return $ret;
+	}
+
 	public function loadModel($id)
 	{
 		$model=Group::model()->findByPk($id);
