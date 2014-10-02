@@ -18,13 +18,10 @@ SitePageRank
 6. Alexa Rank
 
 ## 相關套件 
-### 核心
-Yii 1.1.15
-
 ### 界面
 Bootstrap 3.2  
 Awesome font 4.2  
-  
+Yii 1.1.15  
 
 
 ## 安裝環境 
@@ -43,7 +40,16 @@ Apache-Rewrite(非必要)
 ### 設定檔 
 `\SitePageRank\protects\config\config.php`  
 
-##客製化
+### 如何批次執行
 
-如果希望新增不同的資料，就需要客製化，
+	wget http://localhost/index.php/cron/{key}
 
+其中key要在下列檔案設定
+
+	\SitePageRank\protects\config.php
+	
+	'params'=>array(
+	...
+	'runKey'=>'0OY6478Xl29695l649Ni',
+	...
+之後就可以使用wget直接執行PHP
