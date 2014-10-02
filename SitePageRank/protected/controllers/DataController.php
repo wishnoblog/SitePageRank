@@ -185,18 +185,25 @@ class DataController extends Controller
                     		SUM(`data`.`alexa_link`) AS 'alexa_link',
 							SUM(`data`.`GoogleData`) AS 'Pages',
 							SUM(`data`.`google_backlink`) AS 'google_backlink',
-                    		AVG(`data`.`google_page_rank`) AS 'PR'
+                    		AVG(`data`.`google_page_rank`) AS 'PR',
+                    		SUM(`data`.`GooglePlusShares`)AS 'GooglePlusShares',
+                    		SUM(`data`.`TwitterShares`)AS 'TwitterShares',
+                    		SUM(`data`.`Facebook`)AS 'Facebook',
+                    		SUM(`data`.`FB_share_count`) AS 'FB_share_count',
+                    		SUM(`data`.`FB_like_count`) AS 'FB_like_count',
+                    		SUM(`data`.`FB_commentsbox_count`)AS 'FB_commentsbox_count',
+                    		SUM(`data`.`FB_click_count`)AS 'FB_click_count',
+                    		SUM(`data`.`LinkedInShares`)AS 'LinkedInShares',
+                    		SUM(`data`.`LinkedInShares`+`data`.`FB_share_count`+`data`.`TwitterShares`+`data`.`GooglePlusShares`) AS 'social_media'
 
-
-							                   							FROM
+							FROM
 							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
 							JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
 
 							WHERE TaskID=".$id."
-
 							GROUP BY `group`.`groupid`
 
-							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r;  ";	
+							ORDER BY  PR  DESC,Pages  DESC,google_backlink DESC) a , (SELECT @rownum := 0) r;  ";	
 			 
 
 			$connection=Yii::app()->db;  
@@ -220,6 +227,7 @@ class DataController extends Controller
 
 					'name'=>$value['name'],
 					'type'=>$value['type'],
+					'social_media'=>$value['social_media'],
 					);
 				array_push($rows2,$new_value);
 			}
@@ -259,7 +267,7 @@ class DataController extends Controller
 
 							WHERE TaskID=".$TaskID." and `site_url`.`groupid`=".$groupid."
 
-							ORDER BY  Pages desc ) a , (SELECT @rownum := 0) r ";	
+							ORDER BY  PR  DESC,Pages  DESC,google_backlink DESC) a , (SELECT @rownum := 0) r ";	
 			 
 
 			$connection=Yii::app()->db;  
@@ -275,7 +283,7 @@ class DataController extends Controller
 				$new_value=array(
 					//'id'=>$value['id'],
 					//附加連結
-					'name'=>'<a href="' . $value['site'] .'" taget="_blank">'.$value['name'].'</a>',
+					'name'=>'<a href="' . $value['site'] .'" target="_blank">'.$value['name'].'</a>',
 
 					'site'=>$value['site'],
 
@@ -296,9 +304,7 @@ class DataController extends Controller
 					'FB_like_count'=>intval($value['FB_like_count']),
 					'LinkedInShares'=>intval($value['LinkedInShares']),
 
-
-
-										//'type'=>$value['type'],
+					//'type'=>$value['type'],
 					);
 				array_push($rows2,$new_value);
 			}

@@ -5991,3 +5991,240 @@ Stack trace:
 REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/Getjson
 HTTP_REFERER=http://googleget:8888/index.php/%E6%8E%92%E5%90%8D
 ---
+2014/09/30 17:21:12 [error] [php] Undefined variable: googleIds (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:127)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (127)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (40)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/09/30 17:44:53 [error] [php] Undefined variable: googleLinks (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:114)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (114)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (40)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/10/02 10:40:03 [error] [php] Undefined variable: site使用proxy尋找link (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:132)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (132)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (40)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/10/02 15:06:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "GetData" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('GetData')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('run/GetData/0OY...')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/run/GetData/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "GetData" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('GetData')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('run/GetData')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/cron/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:08:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('run/GetData')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/cron/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:08:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('run/GetData')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/cron/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:08:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getdata')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('run/getdata/0OY...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/run/getdata/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:09:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getdata')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/getdata/0OY...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/Run/getdata/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:09:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/GetData/0OY...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/Run/GetData/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:10:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/GetData/0OY...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/Run/GetData/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:10:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/getData/0OY...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/Run/getData/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:10:59 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/getData/0OY...')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/Run/getData/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:11:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "getDataS" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('getDataS')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('getDataS')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/getDataS/0O...')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/Run/getDataS/0OY6478Xl29695l649Ni
+---
+2014/10/02 15:11:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:336
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('GetData')
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Run/GetData')
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php/cron/0OY6478Xl29695l649Ni
+---

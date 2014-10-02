@@ -52,7 +52,7 @@ return array(
 				
 				'排名/Getjson' => 'Data/Getjson',
 				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
-				'cron/<id:\w+>'=>'run/GetData/',
+				'cron/<key>'=>'Run/GetData/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -98,7 +98,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		//管理者信箱
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'wishnoblog@gmail.com',
 		//管理者登入帳號密碼
 		'adminUsername'=>'admin',
 		'adminPassword'=>'admin',
@@ -109,6 +109,7 @@ return array(
 		//執行資料抓取時候，要附加的KEY，務必到下列網址產生，產生時候不要包含特殊符號
 		//https://strongpasswordgenerator.com/
 		'runKey'=>'0OY6478Xl29695l649Ni',
+		'curl_proxy'=>false,
 		//要模擬的UserAgent ,可以直接用瀏覽器開啓 http://www.whatsmyuseragent.com/ 取得
 		'userAgent'=>'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:31.0) Gecko/20100101 Firefox/31.0',
 	),

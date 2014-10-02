@@ -46,7 +46,7 @@ class RunController extends Controller
 	 * 自動執行function
 	 * 需要輸入$key驗證,用於執行Bash指令
 	 */
-	public function GetData($key)
+	public function actionGetData($key)
 	{
 		header('Content-Type: text; charset=utf-8');
 		if($key==Yii::app()->params['runKey'])
@@ -105,12 +105,57 @@ class RunController extends Controller
             $now = new DateTime;
             
             $pagerank = \SEOstats\Services\Google::getPageRank($site);
+            if(!is_numeric($pagerank))
+            {
+            	$pagerank=null;
+            }
+            
+			usleep(rand(1000,3000));
+            //下面這行是採用Google API提供之資料
+            //$googleIds = \SEOstats\Services\Google::getSiteindexTotal($site);
+            //下面這行是採用網頁搜尋結果資料
+            
+            if(($i % 2)==1)
+            {
+            	usleep(rand(500,1000));
+            	$googleIds=$this->GetGoogleSearch("site:$site");
+            	//echo "使用proxy";
+            }else
+            {
+            	$googleIds=$this->GetGoogleSearch("site:$site");
+            }
+            sleep(3);
+            if($googleIds==0)
+            {	
+            	//用另外種管道重抓一次
+            	usleep(rand(5000,10000));
+            	echo '[log]'.$site."使用重抓索引資料";
+            	$googleIds = \SEOstats\Services\Google::getSiteindexTotal($site);
 
-            //$results = \SEOstats\Services\Google::getSiteindexTotal('site:'.$site);
-            $googleIds=$this->GetGoogleSearch('site:'.$site);
-            sleep(5);
-            $googleLinks=$this->GetGoogleSearch('link:'.$site); 
-            echo("[log]".$now->format( 'Y-m-d H:i:s' )."搜尋".$site."有".$googleIds.'項結果 '."\r\n");
+            }
+
+            if(($i % 2)==1)
+            {
+            	usleep(rand(500,1000));
+            	$googleLinks=$this->GetGoogleSearch("link:$site");
+            }else
+            {
+            	$googleLinks=$this->GetGoogleSearch("link:$site");
+
+            }
+            //如果抓不到資料就換個管道
+            if($googleLinks==0)
+            {	
+            	//用另外種管道重抓一次
+            	usleep(rand(5000,10000));
+            	echo '[log]'.$site."使用重抓反向鏈結資料";
+            	$googleLinks=\SEOstats\Services\Google::getBacklinksTotal($site);
+
+            }
+            
+            
+            usleep(rand(1000,3000));
+            //echo("[log]".$now->format( 'Y-m-d H:i:s' )."搜尋".$site."有".$googleLinks.'項結果 '."\r\n");
 
             //取得社群分享數據
             
@@ -157,21 +202,21 @@ class RunController extends Controller
             {
             	$i++;
             }else
-            {
+            {	print("網址:$site出現錯誤");
             	print_r($model->getErrors());	
             }
-            sleep(2);
+            sleep(1);
 
         }
 		echo '執行完畢,共儲存'. $i .'筆資料';
 	}
-	private function GetGoogleSearch($keyword)
+	private function GetGoogleSearch( $keyword , $proxy = false )
 	{
 
 		require_once(Yii::app()->basePath . '/extensions/curl/GoogleWebSearch.php');
 		//取資料
 		$google_search = new GoogleWebSearch();
-		$results = $google_search -> keyword_searchNumber($keyword);
+		$results = $google_search -> keyword_searchNumber($keyword,$proxy);
 		unset($google_search);
 		return $results;
 
@@ -285,6 +330,7 @@ class RunController extends Controller
 		$result = curl_exec($curl);
 		// Get info
 		$info = curl_getinfo($curl);
+		curl_close($curl); 
 		//print_r($info);
 		return $info;
 	}

@@ -19,7 +19,7 @@ interface DefaultSettings
 {
     // The default value returned by all SEOstats methods if no result available.
     // Can be either of type String, Int, Bool or NULL.
-    const DEFAULT_RETURN_NO_DATA = 'n.a.';
+    const DEFAULT_RETURN_NO_DATA = 0;
 
     // The default top level domain ending to use to query Google.
     const GOOGLE_TLD = 'com.tw';

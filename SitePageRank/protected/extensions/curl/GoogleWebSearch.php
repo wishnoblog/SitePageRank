@@ -11,15 +11,19 @@ require_once ("ResultItem.php");
 
 
 class GoogleWebSearch {
-	public function keyword_searchNumber($keyword) {
+	public function keyword_searchNumber($keyword,$proxy=false) {
 		//<div[^>]*?id="resultStats">約有 (.*?)項結果<nobr>
 		
-
 		// 從 Google 取得搜尋結果(HTML原始碼)
         $keyword = urlencode($keyword);
         $url = "https://www.google.com.tw/search?q={$keyword}&num=10";
         $httpReq = new HttpRequest();
+        if($proxy)
+        {
+            $httpReq -> setProxy($proxy);
+        }
         $httpReq -> setUrl($url);
+        
         $content = $httpReq -> submit();
         unset($httpReq);
 		//print_r($content);
@@ -41,7 +45,7 @@ class GoogleWebSearch {
         
         // 從 Google 取得搜尋結果(HTML原始碼)
         $keyword = urlencode($keyword);
-        $url = "https://www.google.com.tw/search?q={$keyword}&num=10";
+        $url = "https://www.google.com.tw/webhp?hl=zh-TW#hl=zh-TW&q={$keyword}&num=10";
         $httpReq = new HttpRequest();
         $httpReq -> setUrl($url);
         $content = $httpReq -> submit();

@@ -15,6 +15,7 @@ class HttpRequest {
     private $timeout;
 
     private $userAgent;
+    private $proxy;
 
 
 
@@ -37,6 +38,8 @@ class HttpRequest {
         $this -> url = "";
 
         $this -> timeout = 30;
+
+        $this -> proxy = false;
 
         $this -> userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:31.0) Gecko/20100101 Firefox/31.0";
 
@@ -65,6 +68,8 @@ class HttpRequest {
         unset($this -> timeout);
 
         unset($this -> userAgent);
+
+        unset($this -> proxy);
 
     }
 
@@ -188,6 +193,11 @@ class HttpRequest {
 
     }
 
+    public function setProxy($proxy) {
+
+        $this -> proxy = $proxy;
+
+    }
 
 
     public function getSession($session = "") {
@@ -205,6 +215,13 @@ class HttpRequest {
         curl_setopt($ch , CURLOPT_HEADER , true);
 
         curl_setopt($ch , CURLOPT_FOLLOWLOCATION , false);
+        //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+        if($this -> proxy)
+        {
+            curl_setopt($ch, CURLOPT_PROXY, $this -> proxy);
+        }
+
 
         curl_setopt($ch , CURLOPT_USERAGENT , "Mozilla/5.0 (Windows NT 5.1; rv:14.0) Gecko/20100101 Firefox/14.0.1");
 

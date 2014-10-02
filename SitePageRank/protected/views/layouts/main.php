@@ -84,10 +84,10 @@
 				<hr>
 				<div id="footer">
 					<div align="center">
-					建議使用firefox/IE11/chrome瀏覽網站<br/>
+					建議使用Firefox/IE11/Chrome/Safari瀏覽網站<br/>
 
 						Copyright &copy; <?php echo date('Y'); ?> by <a href="http://www.kuas.edu.tw">國立高雄應用科技大學</a>計算機與網路中心<br/>
-						All Rights Reserved.<br/>程式設計 <a href="mailto:wishnoblog@gmail.com">歐陽毅 </a> GitHub
+						程式設計 <a href="mailto:wishnoblog@gmail.com">歐陽毅 </a> <a href="https://github.com/wishnoblog/SitePageRank">GitHub</a>
 					</div>
 					</div><!-- footer -->
 				</body>
