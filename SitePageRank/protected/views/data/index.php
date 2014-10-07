@@ -86,6 +86,7 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                         <th data-field="TwitterShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-twitter.png" alt="Google"> Twiter</th>
                         <th data-field="GooglePlusShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-googleplus.png" alt="G+"> Google+</th>
                         <th data-field="LinkedInShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-linkedin.png" alt="linkdin"></i> linkedin</th>
+                        <th data-field="detail" data-sortable="false"  data-align="right" data-halign="right" style="width : 50px;">詳細資料</th>
 
                     </tr>
                 </thead>

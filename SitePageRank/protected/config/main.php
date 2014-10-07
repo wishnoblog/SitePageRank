@@ -47,9 +47,10 @@ return array(
 			'rules'=>array(
 				'Getjsonbyid/<id:\d+>'=> 'Data/Getjsonbyid/',
 				'Getjson'=> 'Data/Getjson',
+				'getjsonhistrory/<id:\d+>'=> 'Data/GetJsonHistory/',
 				'排名'   => 'Data/Rank',
 				'排名/getJsonDetailbyid/<id:\d+>' => 'Data/getJsonDetailbyid/',
-				
+				'排名/Detail/<id:\d+>' => 'Data/Detail/',
 				'排名/Getjson' => 'Data/Getjson',
 				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
 				'cron/<key>'=>'Run/GetData/',

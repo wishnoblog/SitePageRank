@@ -28,16 +28,8 @@ class DataController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','GetJson','GetJsonByID','GetJsonDetailByID','Rank'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('index','view','GetJson','GetJsonByID','GetJsonDetailByID','Rank','Detail','GetJsonHistory'),
+				'users'=>array('*'),	
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -56,67 +48,6 @@ class DataController extends Controller
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Data;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Data']))
-		{
-			$model->attributes=$_POST['Data'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->DataID));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Data']))
-		{
-			$model->attributes=$_POST['Data'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->DataID));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**
@@ -246,6 +177,7 @@ class DataController extends Controller
 
 							`site_url`.`name`, 
 							`site_url`.`site`,
+							`site_url`.`siteID`,
 							(`data`.`alexa_rank`) AS 'alexa_rank',
                     		(`data`.`alexa_rank_tw`) AS 'alexa_rank_tw',
                     	    (`data`.`alexa_link`) AS 'alexa_link',
@@ -303,6 +235,7 @@ class DataController extends Controller
 					'FB_commentsbox_count'=>intval($value['FB_commentsbox_count']),
 					'FB_like_count'=>intval($value['FB_like_count']),
 					'LinkedInShares'=>intval($value['LinkedInShares']),
+					'detail'=> '<a href="排名/Detail/' . $value['siteID'] .'" target="_blank">開啓視窗</a>',
 
 					//'type'=>$value['type'],
 					);
@@ -368,5 +301,89 @@ class DataController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	public function actionDetail($id)
+	{
+		$this->layout='//layouts/main';
+		Yii::app()->clientScript->registerCoreScript('jquery');
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/themes/bootstrap/js/waypoints.min.js');
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/themes/bootstrap/js/jquery.counterup.min.js');
+		//Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/themes/bootstrap/js/circles.js');
+
+		Yii::app()->getClientScript()->registerCss('Detail','
+			.counters span {
+		    	font-size: 35px;
+		    	color: #FFBF00;
+		    	text-align: center;
+			}');
+		$site_model=SiteUrl::model()->findByPk($id);
+
+		if($site_model==null)
+		{
+			throw new CHttpException(404,'The requested page does not exist.');
+		}
+		$group_model=Group::model()->findByPk($site_model->groupid);
+		
+		$lastTaskId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
+		$DataID = Yii::app()->db->createCommand('SELECT DataID FROM data WHERE `TaskID`='.$lastTaskId.' AND SiteID='.$id.' ORDER BY DataID DESC LIMIT 1')->queryScalar();
+
+
+		$this->render('detail',array(
+			'site_model'=>$site_model,
+			'group_model'=>$group_model,
+			'data'=> $this -> loadModel($DataID),
+		));
+	
+
+	}
+	public function actionGetJsonHistory($id)
+	{
+					$sql="SELECT 
+
+					`GoogleData`,
+					`google_page_rank`,
+					`google_backlink`,
+					`GooglePlusShares`,
+					`TwitterShares`,
+					`FB_share_count`,
+					`FB_like_count`,
+					`LinkedInShares`,
+					`Time` 
+
+					FROM data 
+
+					WHERE siteID=".$id ." 
+
+					ORDER BY DataID ASC ";	
+					 
+
+					$connection=Yii::app()->db;  
+					$command=$connection->createCommand($sql);
+					$rows=$command->queryAll();   
+
+					//形態轉換，將需要成為數字的轉成正確的數字
+					$rows2=array();
+
+					//print_r($sql);
+					foreach($rows as $value){
+
+						$new_value=array(
+							//'id'=>$value['id'],
+							//附加連結
+							'google_page_rank'=>intval($value['google_page_rank']),
+							'google_backlink'=>intval($value['google_backlink']),
+							'GooglePlusShares'=>intval($value['GooglePlusShares']),
+							'TwitterShares'=>intval($value['TwitterShares']),
+							'FB_share_count'=>intval($value['FB_share_count']),
+							'FB_like_count'=>intval($value['FB_like_count']),
+							'LinkedInShares'=>intval($value['LinkedInShares']),
+							
+							'time'=>$value['Time'],
+
+							//'type'=>$value['type'],
+							);
+						array_push($rows2,$new_value);
+					}
+					echo CJSON::encode($rows2);
 	}
 }
