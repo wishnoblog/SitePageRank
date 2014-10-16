@@ -5,7 +5,7 @@ $this->pageTitle='排名 - '.Yii::app()->name;
 
 ?>
 
-<h1>各單位及系所排名 <small>網站資訊統計系統</small></h1>
+<h1>各行政單位排名 <small>網站資訊統計系統</small></h1>
 <?php 
 	$data_url = Yii::app()->request->url . '/Getjson' ;
 ?>
@@ -30,19 +30,17 @@ $this->pageTitle='排名 - '.Yii::app()->name;
              <div class="panel-heading"><i class="fa fa-book"></i> 說明</div>
              <div class="panel-body">
                <ul>
-                   <li> <i class="fa fa-line-chart"></i> 排名順位為 <img src="../images/icon-google.png" alt="Google">PR值、 <img src="../images/icon-google.png" alt="Google">頁面索引量、 <img src="../images/icon-google.png" alt="Google">反向連結數。
+                   <li> <i class="fa fa-line-chart"></i> 排名順位為Impacts(連結量)、檔案量反向連結數。
                         </li>
                    <li>
-                        <img src="../images/icon-google.png" alt="Google">PR 為Google對每個網站的評分，請參閱<a href="http://zh.wikipedia.org/zh-tw/PageRank" target="_blank">說明</a>
+                       Presence指標，最新指標指的是檔案數量，僅統計<code>PDF/Word/Power Point/PS/EPS檔</code>。
                    </li>
                    <li>
-                        <img src="../images/icon-google.png" alt="Google">反向連結 為Google取得的其他網站連結到您網站的數量</a>
+                        Impacts指標，指的是其他網站連結至您網站的數量。
                    </li>
+                
                    <li>
-                       <img src="../images/icon-google.png" alt="Google">Google相關資料由Google API提供，會比實際搜尋頁面值略低，參閱 <a href="https://developers.google.com/web-search/docs/">API說明</a>
-                   </li>
-                   <li>
-                       社群分享數目前統計FB、Twitter與Linkedit等分享或推薦數量，社群媒體分享情形大幅影響搜尋引擎的自然排序。
+                       社群分享數目前統計FB、Twitter與Linkedit等分享或推薦數量，社群媒體分享情形大幅影響您網站訊息散播情形。
                    </li>
                </ul>
              </div>
@@ -59,9 +57,9 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                         <th data-field="name" data-align="center"  data-halign="center" style="width : 50px;"><i class="fa fa-flag"> 名稱</i></th>
                 
                         <th data-field="type" data-align="center"  data-halign="center" data-sortable="true" style="width : 50px;"> <i class="fa fa-sitemap"></i> 類型</th>
-                        <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
-                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引量</i></th>               
-                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
+                                   
+                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Impacts(網站被連結量)</th>
+                        <th data-field="files" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Presence指標(檔案數)</th>
                         <th data-field="social_media" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-share-alt"></i> 社群媒體</th>
                         
                       
@@ -78,13 +76,17 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                     <tr>
                         <th data-field="name"  style="width : 30px;"><i class="fa fa-flag"> 網站</i></th>
 
-                        <th data-field="PR" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> PR</th>
-                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面索引</i></th>
-                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 反向連結數</th>
-                        <th data-field="FB_share_count" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-facebook.png" alt="facebook">分享數</th>
+                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google">被連結</th>
+                        <th data-field="files" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">檔案數</th>
+                         <th data-field="PDF" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-file-pdf-o"></i>PDF</th>
+                         <th data-field="Word" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-file-word-o"></i>Word檔</th>
+                        
+                         <th data-field="PPT" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-file-powerpoint-o"></i>PPT檔</th>
+                        <th data-field="Pages" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-google.png" alt="Google"> 頁面量</i></th>
+                       
+                        <th data-field="FB_share_count" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-facebook.png" alt="facebook">分享</th>
 
                         <th data-field="TwitterShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-twitter.png" alt="Google"> Twiter</th>
-                        <th data-field="GooglePlusShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-googleplus.png" alt="G+"> Google+</th>
                         <th data-field="LinkedInShares" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><img src="../images/icon-linkedin.png" alt="linkdin"></i> linkedin</th>
                         <th data-field="detail" data-sortable="false"  data-align="right" data-halign="right" style="width : 50px;">詳細資料</th>
 

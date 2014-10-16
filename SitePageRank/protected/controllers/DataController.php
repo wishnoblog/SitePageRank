@@ -28,7 +28,7 @@ class DataController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','GetJson','GetJsonByID','GetJsonDetailByID','Rank','Detail','GetJsonHistory'),
+				'actions'=>array('index','view','GetJson','GetOfficeJson','GetTeachJson','GetJsonByID','GetOfficeJsonByID','GetTeachJsonByID','GetJsonDetailByID','Rank','RankOffice','RankTeach','Detail','GetJsonHistory'),
 				'users'=>array('*'),	
 			),
 			array('deny',  // deny all users
@@ -57,11 +57,21 @@ class DataController extends Controller
 	{	
 		//取得最後一筆Task
 		$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
-		echo $this->getJson($lastId);
-
-
-
+		echo $this->getJson($lastId,false);
 	}
+	public function actionGetOfficeJson()
+	{	
+		//取得最後一筆Task
+		$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
+		echo $this->getJson($lastId,'行政單位');
+	}
+	public function actionGetTeachJson()
+	{	
+		//取得最後一筆Task
+		$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
+		echo $this->getJson($lastId,'教學單位');
+	}
+
 	/**
 	 * 取得特定時間(Taskid)資料
 	 */
@@ -72,13 +82,47 @@ class DataController extends Controller
 			//檢查ID是否存在
 			if(Task::model()->exists('TaskID = :TaskID', array(":TaskID"=>$id)))
 			{
-				echo $this->getJson($id);
+				echo $this->getJson($id,false);
 			}else
 			{
 				echo "error";
 			}
 		};
 	}
+
+	public function actionGetOfficeJsonByID($id)
+	{
+		//echo $id;
+		if(floor($id) == $id)
+		{
+			//檢查ID是否存在
+			if(Task::model()->exists('TaskID = :TaskID', array(":TaskID"=>$id)))
+			{
+				echo $this->getJson($id,'行政單位');
+			}else
+			{
+				echo "error";
+			}
+		};
+	}
+	/**
+	 * 取得特定時間(Taskid)資料
+	 */
+	public function actionGetTeachJsonByID($id)
+	{
+		if(floor($id) == $id)
+		{
+			//檢查ID是否存在
+			if(Task::model()->exists('TaskID = :TaskID', array(":TaskID"=>$id)))
+			{
+				echo $this->getJson($id,'教學單位');
+			}else
+			{
+				echo "error";
+			}
+		};
+	}
+
 	/**
 	 * 取得群組的更詳細資料
 	 */
@@ -102,7 +146,7 @@ class DataController extends Controller
 	/**
 	 * 產生總和的Json
 	 */
-	private function getJson($id)
+	private function getJson($id,$type)
 	{
 			$sql="SELECT @rownum := @rownum+1 AS 'Rank', a.*
 				FROM (
@@ -110,10 +154,6 @@ class DataController extends Controller
 							`group`.`groupid` AS 'id',
 							`group`.`type`, 
 							`group`.`name`, 
-
-							SUM(`data`.`alexa_rank`) AS 'alexa_rank',
-                    		AVG(`data`.`alexa_rank_tw`) AS 'alexa_rank_tw',
-                    		SUM(`data`.`alexa_link`) AS 'alexa_link',
 							SUM(`data`.`GoogleData`) AS 'Pages',
 							SUM(`data`.`google_backlink`) AS 'google_backlink',
                     		AVG(`data`.`google_page_rank`) AS 'PR',
@@ -125,16 +165,16 @@ class DataController extends Controller
                     		SUM(`data`.`FB_commentsbox_count`)AS 'FB_commentsbox_count',
                     		SUM(`data`.`FB_click_count`)AS 'FB_click_count',
                     		SUM(`data`.`LinkedInShares`)AS 'LinkedInShares',
-                    		SUM(`data`.`LinkedInShares`+`data`.`FB_share_count`+`data`.`TwitterShares`+`data`.`GooglePlusShares`) AS 'social_media'
-
+                    		SUM(`data`.`LinkedInShares`+`data`.`FB_share_count`+`data`.`TwitterShares`) AS 'social_media',
+							SUM(`data`.`doc`+`data`.`docx`+`data`.`pdf`+`data`.`ppt`+`data`.`pptx`+`data`.`ps`+`data`.`eps`) AS 'files'
 							FROM
 							`data` JOIN `site_url` ON `data`.`SiteID` = `site_url`.`SiteID` 
 							JOIN `group` ON `site_url`.`groupid` = `group`.`groupid` 
 
-							WHERE TaskID=".$id."
+							WHERE TaskID=".$id." ".($type!= false ? "and `group`.`type` ='$type'":"")."
 							GROUP BY `group`.`groupid`
 
-							ORDER BY  PR  DESC,Pages  DESC,google_backlink DESC) a , (SELECT @rownum := 0) r;  ";	
+							ORDER BY  google_backlink  DESC,Pages  DESC,google_backlink DESC) a , (SELECT @rownum := 0) r;  ";	
 			 
 
 			$connection=Yii::app()->db;  
@@ -150,15 +190,12 @@ class DataController extends Controller
 
 					'Rank'=>intval($value['Rank']),
 					'Pages'=>intval($value['Pages']),
-					'alexa_rank'=>intval($value['alexa_rank']),
-					'alexa_rank_tw'=>intval($value['alexa_rank_tw']),
-					'alexa_link'=>intval($value['alexa_link']),
 					'PR'=>intval($value['PR']),
 					'google_backlink'=>intval($value['google_backlink']),
-
+					'files'=>intval($value['files']),
 					'name'=>$value['name'],
 					'type'=>$value['type'],
-					'social_media'=>$value['social_media'],
+					'social_media'=>intval($value['social_media']),
 					);
 				array_push($rows2,$new_value);
 			}
@@ -191,7 +228,11 @@ class DataController extends Controller
                     		`data`.`FB_like_count`,
                     		`data`.`FB_commentsbox_count`,
                     		`data`.`FB_click_count`,
-                    		`data`.`LinkedInShares`
+                    		`data`.`LinkedInShares`,
+                    		(`data`.`doc`+`data`.`docx`) AS Word,
+                    		`data`.`pdf`,
+                    		(`data`.`ppt`+`data`.`pptx`) AS PPT,
+                    		SUM(`data`.`doc`+`data`.`docx`+`data`.`pdf`+`data`.`ppt`+`data`.`pptx`+`data`.`ps`+`data`.`eps`) AS 'files'
 
 
 							FROM
@@ -235,6 +276,10 @@ class DataController extends Controller
 					'FB_commentsbox_count'=>intval($value['FB_commentsbox_count']),
 					'FB_like_count'=>intval($value['FB_like_count']),
 					'LinkedInShares'=>intval($value['LinkedInShares']),
+					'Word'=>intval($value['Word']),
+					'PDF'=>intval($value['pdf']),
+					'PPT'=>intval($value['PPT']),
+					'files'=>intval($value['files']),
 					'detail'=> '<a href="排名/Detail/' . $value['siteID'] .'" target="_blank">開啓視窗</a>',
 
 					//'type'=>$value['type'],
@@ -246,15 +291,31 @@ class DataController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionRank()
+	public function actionRankOffice()
 	{
 
 			$this->layout='//layouts/main';
 			Yii::app()->clientScript->registerCoreScript('jquery');
-			$this->render('index');
+			$this->render('index',array(
+			'type'=>'行政單位',
+			'json_route'=>'GetOfficeJson',
+			));
 
 
 	}
+	public function actionRankTeach()
+	{
+
+			$this->layout='//layouts/main';
+			Yii::app()->clientScript->registerCoreScript('jquery');
+			$this->render('index',array(
+			'type'=>'教學單位',
+			'json_route'=>'GetTeachJson',
+			));
+
+
+	}
+
 	public function actionIndex()
 	{
 		
@@ -344,6 +405,7 @@ class DataController extends Controller
 					`google_page_rank`,
 					`google_backlink`,
 					`GooglePlusShares`,
+					`PDF`,
 					`TwitterShares`,
 					`FB_share_count`,
 					`FB_like_count`,

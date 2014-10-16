@@ -48,11 +48,28 @@ return array(
 				'Getjsonbyid/<id:\d+>'=> 'Data/Getjsonbyid/',
 				'Getjson'=> 'Data/Getjson',
 				'getjsonhistrory/<id:\d+>'=> 'Data/GetJsonHistory/',
+				
 				'排名'   => 'Data/Rank',
+				'行政單位排名'   => 'Data/RankOffice',
+				'學術單位排名'   => 'Data/RankTeach',
+				
 				'排名/getJsonDetailbyid/<id:\d+>' => 'Data/getJsonDetailbyid/',
+				'行政單位排名/getJsonDetailbyid/<id:\d+>' => 'Data/getJsonDetailbyid/',
+				'學術單位排名/getJsonDetailbyid/<id:\d+>' => 'Data/getJsonDetailbyid/',
+
+
 				'排名/Detail/<id:\d+>' => 'Data/Detail/',
+				'行政單位排名/Detail/<id:\d+>' => 'Data/Detail/',
+				'學術單位排名/Detail/<id:\d+>' => 'Data/Detail/',
+				
 				'排名/Getjson' => 'Data/Getjson',
+				'行政單位排名/Getjson' => 'Data/GetOfficejson',
+				'學術單位排名/Getjson' => 'Data/GetTeachjson',
+				
 				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
+				'學術單位排名/Getjsonbyid/<id:\d+>' => 'Data/GetTeachJsonbyid/',
+				'行政單位排名/Getjsonbyid/<id:\d+>' => 'Data/GetOfficeJsonbyid/',
+				
 				'cron/<key>'=>'Run/GetData/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

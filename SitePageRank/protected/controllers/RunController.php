@@ -101,15 +101,18 @@ class RunController extends Controller
             
 
             //系統延遲
-
+            $pagerank=0;
             $now = new DateTime;
-            
-            $pagerank = \SEOstats\Services\Google::getPageRank($site);
-            if(!is_numeric($pagerank))
-            {
-            	$pagerank=null;
-            }
-            
+            try {
+	            $pagerank = \SEOstats\Services\Google::getPageRank($site);
+	            if(!is_numeric($pagerank))
+	            {
+	            	$pagerank=null;
+	            }
+            }catch (Exception $e) {
+			    $pagerank=null;
+			}
+
 			usleep(rand(1000,3000));
             //下面這行是採用Google API提供之資料
             //$googleIds = \SEOstats\Services\Google::getSiteindexTotal($site);
@@ -119,7 +122,7 @@ class RunController extends Controller
             {
             	usleep(rand(500,1000));
             	$googleIds=$this->GetGoogleSearch("site:$site");
-            	//echo "使用proxy";
+            	
             }else
             {
             	$googleIds=$this->GetGoogleSearch("site:$site");
@@ -164,6 +167,26 @@ class RunController extends Controller
 			$fb=Social::getFacebookShares(); 
 			//print_r($fb);
 			
+			//site:pdf
+			$pdf=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:pdf');
+			usleep(rand(1000,3000));
+			//doc
+			$doc=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:doc');
+			usleep(rand(1000,3000));
+			$docx=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:docx');
+			usleep(rand(1000,3000));
+			//
+			$ppt=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:ppt');
+			usleep(rand(1000,3000));
+			$pptx=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:pptx');
+			usleep(rand(1000,3000));
+
+			$ps=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:ps');
+			usleep(rand(1000,3000));
+			$eps=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:eps');
+			usleep(rand(1000,3000));
+
+
 			$info=$this->get_url_info($site);
             $model = new Data;
             $model->attributes=array
@@ -176,7 +199,7 @@ class RunController extends Controller
              	'robot'=> $this->remoteFileExists("$site/robots.txt"),
              	'sitemap'=> $this->remoteFileExists("$site/sitemap.xml"),
              	'Time' => $now->format( 'Y-m-d H:i:s' ),
-             	'GooglePlusShares'=>Social::getGooglePlusShares(),
+             	//'GooglePlusShares'=>Social::getGooglePlusShares(),
              	'Facebook'=>$fb['total_count'],
              	'FB_share_count'=>$fb['share_count'],
              	'FB_like_count'=>$fb['like_count'],
@@ -185,15 +208,18 @@ class RunController extends Controller
              	'FB_click_count'=>$fb['click_count'],
              	'TwitterShares'=>Social::getTwitterShares(),
              	'LinkedInShares'=>Social::getLinkedInShares(),
+             	'pdf'=>$pdf,
+             	'doc'=>$doc,
+             	'docx'=>$docx,
+             	'ppt'=>$ppt,
+             	'pptx'=>$pptx,
+             	'ps'=>$ps,
+             	'eps'=>$eps,
              	'YY'=>$now->format( 'Y' ),
              	'MM'=>$now->format( 'm' ),
              	'DD'=>$now->format( 'd' ),
              	'TaskID'=>$taskID,
              	'google_page_rank'=>$pagerank,
-
-             	'alexa_rank'=>$this->get_rank_Alaxa($site),
-             	'alexa_rank_tw'=>$this->get_rank_Alaxa_tw($site),
-             	'alexa_link'=>$this->get_rank_Alaxa_link($site),
 
         	);
 

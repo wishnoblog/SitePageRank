@@ -24,6 +24,13 @@
  * @property string $FB_commentsbox_count
  * @property string $FB_click_count
  * @property string $LinkedInShares
+ * @property string $pdf
+ * @property string $doc
+ * @property string $docx
+ * @property string $ppt
+ * @property string $pptx
+ * @property string $ps
+ * @property string $eps
  * @property string $Time
  * @property integer $YY
  * @property integer $MM
@@ -53,12 +60,12 @@ class Data extends CActiveRecord
 		return array(
 			array('SiteID, YY, MM, DD', 'required'),
 			array('SiteID, robot, sitemap, google_page_rank, YY, MM, DD', 'numerical', 'integerOnly'=>true),
-			array('GoogleData, google_backlink, alexa_rank, alexa_rank_tw, GooglePlusShares, TwitterShares, Facebook, FB_share_count, FB_like_count, FB_comment_count, FB_commentsbox_count, FB_click_count, LinkedInShares, TaskID', 'length', 'max'=>20),
+			array('GoogleData, google_backlink, alexa_rank, alexa_rank_tw, GooglePlusShares, TwitterShares, Facebook, FB_share_count, FB_like_count, FB_comment_count, FB_commentsbox_count, FB_click_count, LinkedInShares, pdf, doc, docx, ppt, pptx, ps, eps, TaskID', 'length', 'max'=>20),
 			array('alexa_link', 'length', 'max'=>11),
 			array('filetime, Time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('DataID, SiteID, filetime, robot, sitemap, GoogleData, google_page_rank, google_backlink, alexa_rank, alexa_rank_tw, alexa_link, GooglePlusShares, TwitterShares, Facebook, FB_share_count, FB_like_count, FB_comment_count, FB_commentsbox_count, FB_click_count, LinkedInShares, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
+			array('DataID, SiteID, filetime, robot, sitemap, GoogleData, google_page_rank, google_backlink, alexa_rank, alexa_rank_tw, alexa_link, GooglePlusShares, TwitterShares, Facebook, FB_share_count, FB_like_count, FB_comment_count, FB_commentsbox_count, FB_click_count, LinkedInShares, pdf, doc, docx, ppt, pptx, ps, eps, Time, YY, MM, DD, TaskID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -100,6 +107,13 @@ class Data extends CActiveRecord
 			'FB_commentsbox_count' => 'Fb Commentsbox Count',
 			'FB_click_count' => 'Fb Click Count',
 			'LinkedInShares' => 'Linked In Shares',
+			'pdf' => 'Pdf',
+			'doc' => 'Doc',
+			'docx' => 'Docx',
+			'ppt' => 'Ppt',
+			'pptx' => 'Pptx',
+			'ps' => 'Ps',
+			'eps' => 'Eps',
 			'Time' => '記錄時間',
 			'YY' => '年',
 			'MM' => '月',
@@ -146,6 +160,13 @@ class Data extends CActiveRecord
 		$criteria->compare('FB_commentsbox_count',$this->FB_commentsbox_count,true);
 		$criteria->compare('FB_click_count',$this->FB_click_count,true);
 		$criteria->compare('LinkedInShares',$this->LinkedInShares,true);
+		$criteria->compare('pdf',$this->pdf,true);
+		$criteria->compare('doc',$this->doc,true);
+		$criteria->compare('docx',$this->docx,true);
+		$criteria->compare('ppt',$this->ppt,true);
+		$criteria->compare('pptx',$this->pptx,true);
+		$criteria->compare('ps',$this->ps,true);
+		$criteria->compare('eps',$this->eps,true);
 		$criteria->compare('Time',$this->Time,true);
 		$criteria->compare('YY',$this->YY);
 		$criteria->compare('MM',$this->MM);
