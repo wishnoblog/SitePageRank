@@ -9525,3 +9525,84 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/Detail/46
 ---
+2014/10/16 19:44:16 [error] [php] Undefined variable: site出現錯誤 (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:231)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (231)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (40)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/10/16 19:44:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php:350
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(395): DataController->loadModel(false)
+#1 [internal function]: DataController->actionDetail('46')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DataController), Array)
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DataController), Object(ReflectionMethod), Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Detail')
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Detail')
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/Detail/46
+---
+2014/10/16 20:08:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php:350
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(395): DataController->loadModel(false)
+#1 [internal function]: DataController->actionDetail('46')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DataController), Array)
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DataController), Object(ReflectionMethod), Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Detail')
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Detail')
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/Detail/46
+---
+2014/10/16 20:10:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php:350
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php(395): DataController->loadModel(false)
+#1 [internal function]: DataController->actionDetail('46')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DataController), Array)
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DataController), Object(ReflectionMethod), Array)
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('Detail')
+#13 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/Detail')
+#14 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php/%E6%8E%92%E5%90%8D/Detail/46
+---
