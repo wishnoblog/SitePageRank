@@ -59,7 +59,7 @@
 
 							array('label'=>'<i class="fa fa-users"></i> 組織', 'url'=>array('/group/admin'), 'visible'=>!Yii::app()->user->isGuest,'active'=>(Yii::app()->controller->id.'/'.Yii::app()->controller->action->id)=='group/admin',),
 							array('label'=>'<i class="fa fa-tasks"></i> 網址', 'url'=>array('/siteurl/admin'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'<i class="fa fa-floppy-o"></i> 手動執行程序', 'url'=>array('/run/'), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>'<i class="fa fa-floppy-o"></i> 手動執行', 'url'=>array('/run/'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>'<i class="fa fa-cog"></i>管理登入', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),							
 							array('label'=>'登出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 						),
