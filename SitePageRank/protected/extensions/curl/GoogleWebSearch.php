@@ -11,10 +11,10 @@ require_once ("ResultItem.php");
 
 
 class GoogleWebSearch {
-	public function keyword_searchNumber($keyword,$proxy=false) {
-		//<div[^>]*?id="resultStats">約有 (.*?)項結果<nobr>
-		
-		// 從 Google 取得搜尋結果(HTML原始碼)
+    public function keyword_searchNumber($keyword,$proxy=false) {
+        //<div[^>]*?id="resultStats">約有 (.*?)項結果<nobr>
+        
+        // 從 Google 取得搜尋結果(HTML原始碼)
         $keyword = urlencode($keyword);
         $url = "https://www.google.com.tw/search?q={$keyword}&num=10";
         $httpReq = new HttpRequest();
@@ -26,21 +26,37 @@ class GoogleWebSearch {
         
         $content = $httpReq -> submit();
         unset($httpReq);
-		//print_r($content);
+        //print_r($content);
         //var $results;
         //$pat;
         // 分析原始碼並取得每個項目
         preg_match('/<div id="resultStats">約有 (.*?)項結果<nobr>/' ,$content , $items); 
-		if(!empty($items))
-		{
-			//print_r($items);
-        	return str_replace(',',"",$items[1]);
-    	}else
-    	{
-    		return '0';
-    	}
-	}
-	//下面這段是原始作者提供的程式碼，用於解析Google搜尋後列出的項目，在本程式沒有使用。
+        preg_match('/<div id="resultStats">(.*?) 項結果/' ,$content , $items2); 
+
+
+        $pos = strpos($content,'找不到符合搜尋字詞');
+
+        if(!empty($items))
+        {
+            //print_r($items);
+            return str_replace(',',"",$items[1]);
+        }elseif (!empty($items2)) 
+        {
+             return str_replace(',',"",$items2[1]);
+        }
+        elseif($pos !== false)
+        {
+            //查無結果
+            return '0';
+        }else
+        {
+            //被封鎖因應
+            //echo($url);
+            //echo($content);
+            return null;
+        }
+    }
+    //下面這段是原始作者提供的程式碼，用於解析Google搜尋後列出的項目，在本程式沒有使用。
     public function keyword_search($keyword) {
         
         // 從 Google 取得搜尋結果(HTML原始碼)
@@ -50,7 +66,7 @@ class GoogleWebSearch {
         $httpReq -> setUrl($url);
         $content = $httpReq -> submit();
         unset($httpReq);
-		
+        
         $results = array();
 
         // 分析原始碼並取得每個項目

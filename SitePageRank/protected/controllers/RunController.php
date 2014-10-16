@@ -128,7 +128,7 @@ class RunController extends Controller
             	$googleIds=$this->GetGoogleSearch("site:$site");
             }
             sleep(3);
-            if($googleIds==0)
+            if($googleIds==null)
             {	
             	//用另外種管道重抓一次
             	usleep(rand(5000,10000));
@@ -147,7 +147,7 @@ class RunController extends Controller
 
             }
             //如果抓不到資料就換個管道
-            if($googleLinks==0)
+            if($googleLinks==null)
             {	
             	//用另外種管道重抓一次
             	usleep(rand(5000,10000));
@@ -169,70 +169,84 @@ class RunController extends Controller
 			usleep(rand(4000,10000));
 			//site:pdf
 			$pdf=$this->GetGoogleSearch("site:$site".' filetype:pdf');
-            if($pdf==0)
+            if($pdf==null)
             {	
             	//用另外種管道重抓一次
             	usleep(rand(5000,10000));
             	echo '[log]'.$site."使用重抓PDF鏈結資料";
-            	$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:pdf');
+            	$pdf=\SEOstats\Services\Google::getSiteFileTypeTotal($site,'pdf');
+            	if($pdf==null)
+					$pdf=0;
             }
 
 			usleep(rand(4000,10000));
 			//doc
 			$doc=$this->GetGoogleSearch("site:$site".' filetype:doc');
-            if($doc==0)
+            if($doc==null)
             {	
             	//用另外種管道重抓一次
             	usleep(rand(5000,10000));
             	echo '[log]'.$site."使用重抓doc鏈結資料";
-            	$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:doc');
+            	$doc=\SEOstats\Services\Google::getSiteindexTotal($site,'doc');
+            	if($doc==null)
+					$doc=0;
             }
 			usleep(rand(4000,10000));
 			$docx=$this->GetGoogleSearch("site:$site".' filetype:docx');
-			if($docx==0)
+			if($docx==null)
 			{	
 				//用另外種管道重抓一次
 				usleep(rand(5000,10000));
 				echo '[log]'.$site."使用重抓docx鏈結資料";
-				$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:docx');
+				$docx=\SEOstats\Services\Google::getSiteindexTotal($site,'docx');
+				if($docx==null)
+					$doc=0;
 			}
 			usleep(rand(4000,10000));
 			//
 			$ppt=$this->GetGoogleSearch("site:$site".' filetype:ppt');
-			if($ppt==0)
+			if($ppt==null)
 			{	
 				//用另外種管道重抓一次
 				usleep(rand(5000,10000));
 				echo '[log]'.$site."使用重抓ppt鏈結資料";
-				$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:ppt');
+				$ppt=\SEOstats\Services\Google::getSiteindexTotal($site,'ppt');
+				if($ppt==null)
+					$ppt=0;
 			}
 			usleep(rand(4000,10000));
 			$pptx=$this->GetGoogleSearch("site:$site".' filetype:pptx');
-			if($pptx==0)
+			if($pptx==null)
 			{	
 				//用另外種管道重抓一次
 				usleep(rand(5000,10000));
 				echo '[log]'.$site."使用重抓pptx鏈結資料";
-				$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:pptx');
+				$pptx=\SEOstats\Services\Google::getSiteindexTotal($site,'pptx');
+				if($pptx==null)
+					$pptx=0;
 			}
 			usleep(rand(4000,10000));
 
 			$ps=$this->GetGoogleSearch("site:$site".' filetype:ps');
-			if($ps==0)
+			if($ps==null)
 			{	
 				//用另外種管道重抓一次
 				usleep(rand(5000,10000));
 				echo '[log]'.$site."使用重抓ps鏈結資料";
-				$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:ps');
+				$ps=\SEOstats\Services\Google::getSiteindexTotal($site,'ps');
+				if($ps==null)
+					$ps=0;
 			}
 			usleep(rand(4000,10000));
 			$eps=$this->GetGoogleSearch("site:$site".' filetype:eps');
-			if($eps==0)
+			if($eps==null)
 			{	
 				//用另外種管道重抓一次
 				usleep(rand(5000,10000));
 				echo '[log]'.$site."使用重抓EPS鏈結資料";
-				$googleLinks=\SEOstats\Services\Google::getSiteindexTotal($site.' filetype:eps');
+				$eps=\SEOstats\Services\Google::getSiteindexTotal($site,'eps');
+				if($eps==null)
+					$eps=0;
 			}
 			usleep(rand(4000,10000));
 
@@ -283,7 +297,7 @@ class RunController extends Controller
             }
             sleep(1);
 
-            // if($i>3)
+            // if($i=1)
             // {
             // 	break;
             // }

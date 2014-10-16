@@ -45,6 +45,13 @@ class Google extends SEOstats
 
         return self::getSearchResultsTotal($query);
     }
+    public static function getSiteFileTypeTotal($url = false,$filetype)
+    {
+        $url   = parent::getUrl($url);
+        $query = urlencode("site:{$url} filetype:{$filetype}");
+
+        return self::getSearchResultsTotal($query);
+    }
 
     /**
      *  Returns the total amount of results for a Google 'link:'-search for the object URL.
