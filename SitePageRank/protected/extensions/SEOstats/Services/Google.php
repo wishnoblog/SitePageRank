@@ -81,7 +81,7 @@ class Google extends SEOstats
 
         $ret = parent::_getPage($url);
         //print($url);
-        print_r($ret);
+        //print_r($ret);
         $obj = Helper\Json::decode($ret);
         return !isset($obj->responseData->cursor->estimatedResultCount)
                ? parent::noDataDefaultValue()

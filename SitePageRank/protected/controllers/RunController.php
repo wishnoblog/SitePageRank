@@ -131,7 +131,7 @@ class RunController extends Controller
 			//print_r($model);
 			//$model->getAttributes(array('name', 'distance'));
 			//僅檢查Google API部分
-			if($model->GoogleData=='0')
+			if($model->GoogleData=='0' or $model->GoogleData=='' or is_null($model->GoogleData) or empty($model->GoogleData))
 			{
 				usleep(rand(500,1000));
 				$model->GoogleData=$this->GetGoogleSearch("site:$record->site");
@@ -139,9 +139,9 @@ class RunController extends Controller
 				echo"[$record->site 修正索引部分],";
 
 			}
-
+			
 			usleep(rand(1000,3000));
-			if($model->google_backlink=='0')
+			if($model->google_backlink=='0' or $model->google_backlink=='' or is_null($model->google_backlink) or empty($model->google_backlink))
 			{
 
 				usleep(rand(500,1000));
@@ -163,7 +163,7 @@ class RunController extends Controller
 				if($model->$value==0)
 				{
 					$model->$value=$this->GetGoogleSearch("site:$record->site".' filetype:'.$value);
-					echo"[$record->site 修正$value 部分],";
+					echo"[$record->site 修正檔案 $value 部分],";
 
 					if(is_null($model->$value))
 					{
@@ -180,7 +180,7 @@ class RunController extends Controller
 
 				}
 			}
-			//Yii::app()->end();
+			
 			if($model->save())
 			{
 				$i++;
@@ -195,7 +195,7 @@ class RunController extends Controller
 
 		}
 
-
+	Yii::app()->end();
 
 
 	
