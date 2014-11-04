@@ -154,6 +154,7 @@ class DataController extends Controller
 							`group`.`groupid` AS 'id',
 							`group`.`type`, 
 							`group`.`name`, 
+							(SUM(`data`.`doc`+`data`.`docx`+`data`.`pdf`+`data`.`ppt`+`data`.`pptx`+`data`.`ps`+`data`.`eps`)*0.17+SUM(`data`.`google_backlink`)*0.5) AS 'score',
 							SUM(`data`.`GoogleData`) AS 'Pages',
 							SUM(`data`.`google_backlink`) AS 'google_backlink',
                     		AVG(`data`.`google_page_rank`) AS 'PR',
@@ -174,7 +175,7 @@ class DataController extends Controller
 							WHERE TaskID=".$id." ".($type!= false ? "and `group`.`type` ='$type'":"")."
 							GROUP BY `group`.`groupid`
 
-							ORDER BY  google_backlink  DESC,Pages  DESC,google_backlink DESC) a , (SELECT @rownum := 0) r;  ";	
+							ORDER BY  score  DESC,Pages  DESC,google_backlink DESC) a , (SELECT @rownum := 0) r;  ";	
 			 
 
 			$connection=Yii::app()->db;  
@@ -187,7 +188,7 @@ class DataController extends Controller
 
 				$new_value=array(
 					'id'=>$value['id'],
-
+					'score'=>intval($value['score']),
 					'Rank'=>intval($value['Rank']),
 					'Pages'=>intval($value['Pages']),
 					'PR'=>intval($value['PR']),

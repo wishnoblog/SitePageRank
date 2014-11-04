@@ -10336,3 +10336,61 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/index.php/data/fix/
 ---
+2014/11/04 11:19:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "fix" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('fix')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('fix')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('data/fix')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/data/fix/
+---
+2014/11/04 11:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "fix" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('fix')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('fix')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/fix')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/Data/fix/
+---
+2014/11/04 11:19:27 [error] [php] Undefined variable: value部分 (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php:165)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(133): RunController->runAction()
+#2 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/filters/CInlineFilter.php(58): RunController->filterAccessControl()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): RunController->runActionWithFilters()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): RunController->run()
+#9 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/run/fix/
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (165)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php (68)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2014/11/04 11:28:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "fix" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('fix')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('fix')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('Data/fix')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/Data/fix/
+---
+2014/11/04 11:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "fix" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('fix')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('fix')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('data/fix')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/data/fix/
+---

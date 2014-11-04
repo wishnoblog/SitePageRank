@@ -64,7 +64,8 @@ class RunController extends Controller
 	public function actionFix()
 	{
 		header('Content-Type: text; charset=utf-8');
-		//echo "修正抓取資料";
+		
+		echo "修正抓取資料";
 		$this->FixSEOState();
 	}
 	public function actionFixData()
@@ -135,13 +136,17 @@ class RunController extends Controller
 				usleep(rand(500,1000));
 				$model->GoogleData=$this->GetGoogleSearch("site:$record->site");
 
+				echo"[$record->site 修正索引部分],";
+
 			}
+
 			usleep(rand(1000,3000));
 			if($model->google_backlink=='0')
 			{
 
 				usleep(rand(500,1000));
 				$model->google_backlink=$this->GetGoogleSearch("link:$record->site");
+				echo"[$record->site 修正連結部分],";
 			}
 
 			//逐一檢查檔案是否取得資料。
@@ -158,6 +163,7 @@ class RunController extends Controller
 				if($model->$value==0)
 				{
 					$model->$value=$this->GetGoogleSearch("site:$record->site".' filetype:'.$value);
+					echo"[$record->site 修正$value 部分],";
 
 					if(is_null($model->$value))
 					{

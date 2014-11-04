@@ -30,10 +30,10 @@ $this->pageTitle='排名 - '.Yii::app()->name;
              <div class="panel-heading"><i class="fa fa-book"></i> 說明</div>
              <div class="panel-body">
                <ul>
-                   <li> <i class="fa fa-line-chart"></i> 排名順位為Impacts(連結量)、檔案量反向連結數。
-                        </li>
+                   <li> <i class="fa fa-line-chart"></i> 排名依照總分。</li>
+                   <li>總分=Impacts*0.5＋Presence*0.17</li>
                    <li>
-                       Presence指標，最新指標指的是檔案數量，僅統計<code>PDF/Word/Power Point/PS/EPS檔</code>。
+                       Presence指標，最新指標為檔案數量，統計<code>PDF/Word/Power Point/PS/EPS檔</code>。
                    </li>
                    <li>
                         Impacts指標，指的是其他網站連結至您網站的數量。
@@ -57,9 +57,9 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                         <th data-field="name" data-align="center"  data-halign="center" style="width : 50px;"><i class="fa fa-flag"> 名稱</i></th>
                 
                         <th data-field="type" data-align="center"  data-halign="center" data-sortable="true" style="width : 50px;"> <i class="fa fa-sitemap"></i> 類型</th>
-                                   
-                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Impacts(網站被連結量)</th>
-                        <th data-field="files" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Presence指標(檔案數)</th>
+                        <th data-field="score" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">總分</th>    
+                        <th data-field="google_backlink" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Impacts(網站被連結量)50%</th>
+                        <th data-field="files" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;">Presence指標(檔案數)17%</th>
                         <th data-field="social_media" data-sortable="true"  data-align="right" data-halign="right" style="width : 50px;"><i class="fa fa-share-alt"></i> 社群媒體</th>
                         
                       
