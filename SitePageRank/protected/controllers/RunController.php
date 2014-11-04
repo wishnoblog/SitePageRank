@@ -15,11 +15,11 @@ class RunController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('GetData'),
+				'actions'=>array('GetData','FixData'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index'),
+				'actions'=>array('index','Fix'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -37,7 +37,7 @@ class RunController extends Controller
 
 		header('Content-Type: text/html; charset=utf-8');
 
-		$this->GetSEOState();
+		$this->GetNewSEOState();
 
 		//echo "連結數量".$this->get_rank_Alaxa_link('computer.kuas.edu.tw');
 
@@ -52,7 +52,7 @@ class RunController extends Controller
 		if($key==Yii::app()->params['runKey'])
 		{
 			//執行
-			$this->GetSEOState();
+			$this->GetNewSEOState();
 		}else
 		{
 			//序號錯誤
@@ -61,17 +61,32 @@ class RunController extends Controller
 		}
 
 	}
+	public function actionFix()
+	{
+		header('Content-Type: text; charset=utf-8');
+		//echo "修正抓取資料";
+		$this->FixSEOState();
+	}
+	public function actionFixData()
+	{
+		header('Content-Type: text; charset=utf-8');
+		if($key==Yii::app()->params['runKey'])
+		{
+			//執行
+			$this->GetSEOState();
+		}else
+		{
+			//序號錯誤
+			echo "修正抓取資料";
+
+		}
+	}	
 	/**
 	 * 開始寫入資料
 	 */
-	private function GetSEOState()
+
+	private function GetNewSEOState()
 	{
-		/**
-		 * 輸入的流程應該是->產生GUID及時間碼->存入Task及變數->
-		 */
-
-
-
 		$taskModel=new Task;
 		$date = new DateTime();
 		$taskModel->attributes = array
@@ -80,6 +95,113 @@ class RunController extends Controller
             );
         $taskModel->save();
         $taskID=$taskModel->getPrimaryKey();
+        $this->GetSEOState($taskID);
+	}
+
+	/**
+	 * 修正取得資料，僅修正最後一筆。
+	 */
+	private function FixSEOState()
+	{
+		//取得最後一筆Task
+		//$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
+
+		$dataProvider = new CActiveDataProvider(
+			SiteUrl::model(),
+			array(
+				'pagination' => false
+				)
+		);
+
+		//echo '資料庫共'.$dataProvider->totalItemCount.'筆資料'."\r\n";
+		$i=0;
+		foreach ($dataProvider->getData() as $record) {
+			//逐一將DataID取出
+			//print_r($record);
+			$DataId = Yii::app()->db->createCommand("SELECT DataId FROM data WHERE `SiteID`= $record->SiteID ORDER BY TaskID DESC LIMIT 1")->queryScalar();	
+			//讀取資料
+			$model=Data::model()->findByPk($DataId);
+
+			if($model===null)
+			{
+				continue;
+			}
+
+			//print_r($model);
+			//$model->getAttributes(array('name', 'distance'));
+			//僅檢查Google API部分
+			if($model->GoogleData=='0')
+			{
+				usleep(rand(500,1000));
+				$model->GoogleData=$this->GetGoogleSearch("site:$record->site");
+
+			}
+			usleep(rand(1000,3000));
+			if($model->google_backlink=='0')
+			{
+
+				usleep(rand(500,1000));
+				$model->google_backlink=$this->GetGoogleSearch("link:$record->site");
+			}
+
+			//逐一檢查檔案是否取得資料。
+			$fileTypeList=array(
+				'pdf','doc','docx','ppt','pptx','ps','eps'
+				);
+			
+
+			$fileCount=array();
+			$error_statues=0;
+			foreach ($fileTypeList as $key => $value) {
+				usleep(rand(5000,10000));
+
+				if($model->$value==0)
+				{
+					$model->$value=$this->GetGoogleSearch("site:$record->site".' filetype:'.$value);
+
+					if(is_null($model->$value))
+					{
+						$model->$value=\SEOstats\Services\Google::getSiteFileTypeTotal($record->site,$value);
+						
+						//表示系統被Google封鎖了。
+						if(is_null($model->$value))
+						{
+							$model->$value=0;
+							$error_statues++;
+						}
+
+					}
+
+				}
+			}
+			//Yii::app()->end();
+			if($model->save())
+			{
+				$i++;
+			}else
+			{	print("網址: $site 出現錯誤");
+				print_r($model->getErrors());	
+			}
+			usleep(rand(100,400));
+
+
+
+
+		}
+
+
+
+
+	
+		
+	}//End Function
+	
+	/**
+	 * 
+	 */
+
+	private function GetSEOState($taskID)
+	{
 
 		$dataProvider = new CActiveDataProvider(
 			SiteUrl::model(),
@@ -98,8 +220,6 @@ class RunController extends Controller
             $site = preg_replace('#^https?://#', '', $site);
             $site = preg_replace('#^http?://#', '', $site);
             
-            
-
             //系統延遲
             $pagerank=0;
             $now = new DateTime;
@@ -128,11 +248,11 @@ class RunController extends Controller
             	$googleIds=$this->GetGoogleSearch("site:$site");
             }
             sleep(3);
-            if($googleIds==null)
+            if(is_null($googleIds))
             {	
             	//用另外種管道重抓一次
             	usleep(rand(5000,10000));
-            	echo '[log]'.$site."使用重抓索引資料";
+            	echo '[log]'.$site."使用重抓索引資料;/r/n";
             	$googleIds = \SEOstats\Services\Google::getSiteindexTotal($site);
 
             }
@@ -147,11 +267,11 @@ class RunController extends Controller
 
             }
             //如果抓不到資料就換個管道
-            if($googleLinks==null)
+            if(is_null($googleLinks))
             {	
             	//用另外種管道重抓一次
             	usleep(rand(5000,10000));
-            	echo '[log]'.$site."使用重抓反向鏈結資料";
+            	echo '[log]'.$site."使用API重抓頁面數資料;/r/n";
             	$googleLinks=\SEOstats\Services\Google::getBacklinksTotal($site);
 
             }
@@ -167,90 +287,39 @@ class RunController extends Controller
 			$fb=Social::getFacebookShares(); 
 			//print_r($fb);
 			usleep(rand(4000,10000));
-			//site:pdf
-			$pdf=$this->GetGoogleSearch("site:$site".' filetype:pdf');
-            if($pdf==null)
-            {	
-            	//用另外種管道重抓一次
-            	usleep(rand(5000,10000));
-            	echo '[log]'.$site."使用重抓PDF鏈結資料";
-            	$pdf=\SEOstats\Services\Google::getSiteFileTypeTotal($site,'pdf');
-            	if($pdf==null)
-					$pdf=0;
-            }
-
-			usleep(rand(4000,10000));
-			//doc
-			$doc=$this->GetGoogleSearch("site:$site".' filetype:doc');
-            if($doc==null)
-            {	
-            	//用另外種管道重抓一次
-            	usleep(rand(5000,10000));
-            	echo '[log]'.$site."使用重抓doc鏈結資料";
-            	$doc=\SEOstats\Services\Google::getSiteindexTotal($site,'doc');
-            	if($doc==null)
-					$doc=0;
-            }
-			usleep(rand(4000,10000));
-			$docx=$this->GetGoogleSearch("site:$site".' filetype:docx');
-			if($docx==null)
-			{	
-				//用另外種管道重抓一次
-				usleep(rand(5000,10000));
-				echo '[log]'.$site."使用重抓docx鏈結資料";
-				$docx=\SEOstats\Services\Google::getSiteindexTotal($site,'docx');
-				if($docx==null)
-					$doc=0;
-			}
-			usleep(rand(4000,10000));
+			
 			//
-			$ppt=$this->GetGoogleSearch("site:$site".' filetype:ppt');
-			if($ppt==null)
-			{	
-				//用另外種管道重抓一次
+			//設定抓取的檔案類型
+			//
+			$fileTypeList=array(
+				'pdf','doc','docx','ppt','pptx','ps','eps'
+				);
+
+			$fileCount=array();
+			$error_statues=0;
+			foreach ($fileTypeList as $key => $value) {
 				usleep(rand(5000,10000));
-				echo '[log]'.$site."使用重抓ppt鏈結資料";
-				$ppt=\SEOstats\Services\Google::getSiteindexTotal($site,'ppt');
-				if($ppt==null)
-					$ppt=0;
+				if($error_statues==0)
+				{
+					$fileCount[$value]=$this->GetGoogleSearch("site:$site".' filetype:'.$value);
+				}
+				if(is_null($fileCount[$value]))
+				{
+					$fileCount[$value]=\SEOstats\Services\Google::getSiteFileTypeTotal($site,$value);
+					
+					//表示系統被Google封鎖了。
+					if(is_null($fileCount[$value]))
+					{
+						$fileCount[$value]=0;
+						$error_statues++;
+					}
+
+				}
 			}
-			usleep(rand(4000,10000));
-			$pptx=$this->GetGoogleSearch("site:$site".' filetype:pptx');
-			if($pptx==null)
-			{	
-				//用另外種管道重抓一次
-				usleep(rand(5000,10000));
-				echo '[log]'.$site."使用重抓pptx鏈結資料";
-				$pptx=\SEOstats\Services\Google::getSiteindexTotal($site,'pptx');
-				if($pptx==null)
-					$pptx=0;
-			}
+			
 			usleep(rand(4000,10000));
 
-			$ps=$this->GetGoogleSearch("site:$site".' filetype:ps');
-			if($ps==null)
-			{	
-				//用另外種管道重抓一次
-				usleep(rand(5000,10000));
-				echo '[log]'.$site."使用重抓ps鏈結資料";
-				$ps=\SEOstats\Services\Google::getSiteindexTotal($site,'ps');
-				if($ps==null)
-					$ps=0;
-			}
-			usleep(rand(4000,10000));
-			$eps=$this->GetGoogleSearch("site:$site".' filetype:eps');
-			if($eps==null)
-			{	
-				//用另外種管道重抓一次
-				usleep(rand(5000,10000));
-				echo '[log]'.$site."使用重抓EPS鏈結資料";
-				$eps=\SEOstats\Services\Google::getSiteindexTotal($site,'eps');
-				if($eps==null)
-					$eps=0;
-			}
-			usleep(rand(4000,10000));
-
-
+			//取得網站資訊，包含網站一些設定資訊。
 			$info=$this->get_url_info($site);
             $model = new Data;
             $model->attributes=array
@@ -272,13 +341,13 @@ class RunController extends Controller
              	'FB_click_count'=>$fb['click_count'],
              	'TwitterShares'=>Social::getTwitterShares(),
              	'LinkedInShares'=>Social::getLinkedInShares(),
-             	'pdf'=>$pdf,
-             	'doc'=>$doc,
-             	'docx'=>$docx,
-             	'ppt'=>$ppt,
-             	'pptx'=>$pptx,
-             	'ps'=>$ps,
-             	'eps'=>$eps,
+             	'pdf'=>$fileCount['pdf'],
+             	'doc'=>$fileCount['doc'],
+             	'docx'=>$fileCount['docx'],
+             	'ppt'=>$fileCount['ppt'],
+             	'pptx'=>$fileCount['pptx'],
+             	'ps'=>$fileCount['ps'],
+             	'eps'=>$fileCount['eps'],
              	'YY'=>$now->format( 'Y' ),
              	'MM'=>$now->format( 'm' ),
              	'DD'=>$now->format( 'd' ),
@@ -295,9 +364,9 @@ class RunController extends Controller
             {	print("網址: $site 出現錯誤");
             	print_r($model->getErrors());	
             }
-            sleep(1);
+            usleep(rand(100,400));
 
-            // if($i=1)
+            // if($i==3)
             // {
             // 	break;
             // }

@@ -45,7 +45,7 @@ class Google extends SEOstats
 
         return self::getSearchResultsTotal($query);
     }
-    public static function getSiteFileTypeTotal($url = false,$filetype)
+    public static function getSiteFileTypeTotal($url = false,$filetype='')
     {
         $url   = parent::getUrl($url);
         $query = urlencode("site:{$url} filetype:{$filetype}");
@@ -81,7 +81,7 @@ class Google extends SEOstats
 
         $ret = parent::_getPage($url);
         //print($url);
-        //print_r($ret);
+        print_r($ret);
         $obj = Helper\Json::decode($ret);
         return !isset($obj->responseData->cursor->estimatedResultCount)
                ? parent::noDataDefaultValue()
