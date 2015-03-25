@@ -201,6 +201,7 @@ class DataController extends Controller
 				array_push($rows2,$new_value);
 			}
 			Yii::app()->session['TaskID'] = $id;
+			Yii::app()->session['Type'] = $type;
 			return CJSON::encode($rows2);
 	}
 	/**

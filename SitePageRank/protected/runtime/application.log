@@ -10394,3 +10394,768 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/index.php/data/fix/
 ---
+2015/03/24 15:17:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "link".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('link')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/link
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:13:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:15:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:15:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:16:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:16:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:16:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:17:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/24 16:19:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+---
+2015/03/24 16:27:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reports".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('reports')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/reports
+---
+2015/03/24 16:42:40 [error] [php] Undefined variable: data_url (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:47)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (47)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/24 16:42:49 [error] [php] Undefined variable: data_url (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:24)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (24)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:06:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:06:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+---
+2015/03/25 10:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:06:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:06:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:06:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:06:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:07:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:07:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:07:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:07:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:07:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:08:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:08:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:17:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:17:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+---
+2015/03/25 10:17:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:17:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:18:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-twitter.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-twi...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-twitter.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-linkedin.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-lin...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-linkedin.png
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:19:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:19:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:19:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-facebook.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-fac...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-facebook.png
+---
+2015/03/25 10:19:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/icon-google.png".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('images/icon-goo...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/icon-google.png
+---
+2015/03/25 10:26:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/report/Getjsonbyid6".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report/Getjsonbyid6
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:26:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/report/Getjsonbyid/6".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report/Getjsonbyid/6
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+---
+2015/03/25 10:29:10 [error] [php] Array to string conversion (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:13)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (13)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:29:52 [error] [php] Use of undefined constant date - assumed 'date' (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:13)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (13)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:30:04 [error] [php] Undefined index: date (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:13)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (13)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:30:14 [error] [php] Use of undefined constant date - assumed 'date' (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:13)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (13)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:30:17 [error] [php] Use of undefined constant date - assumed 'date' (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:13)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (13)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:32:15 [error] [php] Trying to get property of non-object (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:14)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (14)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/25 10:57:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名/print".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/print
+HTTP_REFERER=http://googleget:8888/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/25 11:11:10 [error] [php] Trying to get property of non-object (/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php:24)
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(869): ReportController->renderFile()
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(782): ReportController->renderPartial()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php(11): ReportController->render()
+#3 /Users/WiSH/projects/SitePageRank/framework/web/actions/CInlineAction.php(49): ReportController->actionIndex()
+#4 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(286): ReportController->runAction()
+#6 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(265): ReportController->runActionWithFilters()
+#7 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): ReportController->run()
+#8 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/report
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (24)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
+in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)

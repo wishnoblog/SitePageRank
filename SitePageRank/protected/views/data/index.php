@@ -5,8 +5,9 @@ $this->pageTitle='排名 - '.Yii::app()->name;
 
 ?>
 
-<h1>各行政單位排名 <small>網站資訊統計系統</small></h1>
+<h1><?php echo strpos(Yii::app()->request->url,'%E8%A1%8C%E6%94%BF')?'行政單位':'學術單位'; ?> 網站曝光程度排名 <small>網站資訊統計系統</small></h1>
 <?php 
+    //echo Yii::app()->request->requestUri;
 	$data_url = Yii::app()->request->url . '/Getjson' ;
 ?>
 
@@ -26,6 +27,7 @@ $this->pageTitle='排名 - '.Yii::app()->name;
                  echo CHtml::DropDownList('TaskID','date',$ld,array('class'=>'form-control','onchange' => 'changeTaskID();',)); 
            ?>
            </div>
+           <a href="<?php echo Yii::app()->request->url.'/report'; ?>" target="_blank" class="btn btn-primary">列印版</a>
            <div class="panel panel-info">
              <div class="panel-heading"><i class="fa fa-book"></i> 說明</div>
              <div class="panel-body">
@@ -107,21 +109,21 @@ $( document ).ready(function() {
     $('#detail').hide();
 
 
-            $('#table').bootstrapTable({
-            }).on('click-row.bs.table', function (e, row, $element) {
-                //alert("click");
-                //$result.text('Event: click-row.bs.table, data: ' + JSON.stringify(row));
-                //alert(row['id']);
-                var json = <?php echo '"' . Yii::app()->request->url . '/getJsonDetailbyid/"' ;?> + row['id'];
-                $('#table-detail').bootstrapTable('destroy');
-                $('#table-detail').bootstrapTable({
-                    url: json
-                });
-                $('#table-detail').bootstrapTable('load');
-                $('#table-detail').bootstrapTable('refresh');
-                $('#detail').show();
+    $('#table').bootstrapTable({
+    }).on('click-row.bs.table', function (e, row, $element) {
+        //alert("click");
+        //$result.text('Event: click-row.bs.table, data: ' + JSON.stringify(row));
+        //alert(row['id']);
+        var json = <?php echo '"' . Yii::app()->request->url . '/getJsonDetailbyid/"' ;?> + row['id'];
+        $('#table-detail').bootstrapTable('destroy');
+        $('#table-detail').bootstrapTable({
+            url: json
+        });
+        $('#table-detail').bootstrapTable('load');
+        $('#table-detail').bootstrapTable('refresh');
+        $('#detail').show();
 
-            });
+    });
 
 });
 

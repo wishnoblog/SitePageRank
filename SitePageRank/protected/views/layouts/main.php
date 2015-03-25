@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -67,29 +68,29 @@
 
 					 <ul class="nav navbar-nav navbar-right">
 					 </ul>
-					</div><!--/.nav-collapse -->
-				</div>
+				</div><!--/.nav-collapse -->
 			</div>
+		</div><!--END nav bar-->
 
 
-			<div  class="container">
+		<div  class="container">
 
-				<?php if(isset($this->breadcrumbs)):?>
-				<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-					'links'=>$this->breadcrumbs,
-					'htmlOptions'=>array ('class'=>'breadcrumb')
-				)); ?><!-- breadcrumbs -->
-				<?php endif?>
-				<?php echo $content; ?>
-				</div><!-- end container -->
-				<hr>
-				<div id="footer">
-					<div align="center">
-					建議使用Firefox/IE11/Chrome/Safari瀏覽網站<br/>
+			<?php if(isset($this->breadcrumbs)):?>
+			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+				'links'=>$this->breadcrumbs,
+				'htmlOptions'=>array ('class'=>'breadcrumb')
+			)); ?><!-- breadcrumbs -->
+			<?php endif?>
+			<?php echo $content; ?>
+		</div><!-- end container -->
+		<hr>
+		<div id="footer">
+			<div align="center">
+				建議使用Firefox/IE11/Chrome/Safari瀏覽網站<br/>
 
-						Copyright &copy; <?php echo date('Y'); ?> by <a href="http://www.kuas.edu.tw">國立高雄應用科技大學</a>計算機與網路中心<br/>
-						程式設計 <a href="mailto:wishnoblog@gmail.com">歐陽毅 </a> <a href="https://github.com/wishnoblog/SitePageRank">GitHub</a>
-					</div>
-					</div><!-- footer -->
-				</body>
-			</html>
+				Copyright &copy; <?php echo date('Y'); ?> by <a href="http://www.kuas.edu.tw">國立高雄應用科技大學</a>計算機與網路中心<br/>
+				程式設計 <a href="mailto:wishnoblog@gmail.com">歐陽毅 </a> <a href="https://github.com/wishnoblog/SitePageRank">GitHub</a>
+			</div>
+		</div><!-- footer -->
+	</body>
+</html>

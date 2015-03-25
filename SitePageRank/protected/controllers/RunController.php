@@ -3,7 +3,7 @@ require_once realpath(Yii::app()->basePath . '/extensions/SEOstats/bootstrap.php
 use \SEOstats\Services\Social as Social;
 class RunController extends Controller
 {
-
+	
 	public function filters()
 	{
 		return array(
@@ -36,9 +36,9 @@ class RunController extends Controller
 	{
 
 		header('Content-Type: text/html; charset=utf-8');
+		echo("手動執行成績抓取");
 
 		$this->GetNewSEOState();
-
 		//echo "連結數量".$this->get_rank_Alaxa_link('computer.kuas.edu.tw');
 
 	}
