@@ -10,6 +10,7 @@ return array(
 	'name'=>'高應大網站資訊統計系統',
 	'theme'=>'bootstrap',
 	'language'=>'zh_TW',
+	'timeZone'=>'Asia/Taipei',
 	//'defaultController' => 'Data/rank', 
 
 
@@ -95,6 +96,7 @@ return array(
 			'username' => 'root',
 			'password' => '12345',
 			'charset' => 'utf8',
+			'initSQLs'=>array("set time_zone='+08:00';"),
 		),
 		
 		'errorHandler'=>array(
