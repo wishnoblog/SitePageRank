@@ -43,7 +43,7 @@
 						'encodeLabel'=>false,
 
 						'items'=>array(
-							array('label'=>'<i class="fa fa-globe"></i> 首頁', 'url'=>array('/'),'active'=>(Yii::app()->controller->id.'/'.Yii::app()->controller->action->id)=='site/index',),
+							array('label'=>'<i class="fa fa-globe"></i> 首頁', 'url'=>array('/site/index'),'active'=>(Yii::app()->controller->id.'/'.Yii::app()->controller->action->id)=='site/index',),
 							array('label'=>'<i class="fa fa-university"></i> 行政單位排名', 'url'=>array('/行政單位排名'),'active'=>(Yii::app()->controller->id=='data' AND Yii::app()->controller->action->id=='RankOffice'),),
 							array('label'=>'<i class="fa fa-graduation-cap"></i> 學術單位排名', 'url'=>array('/學術單位排名'),'active'=>(Yii::app()->controller->id=='data' AND Yii::app()->controller->action->id=='RankTeach'),),
 							//array('label'=>'<span class="glyphicon glyphicon-star"></span> 提升搜尋排名', 'url'=>array('/site/pagerank')),
@@ -61,7 +61,7 @@
 							array('label'=>'<i class="fa fa-users"></i> 組織', 'url'=>array('/group/admin'), 'visible'=>!Yii::app()->user->isGuest,'active'=>(Yii::app()->controller->id.'/'.Yii::app()->controller->action->id)=='group/admin',),
 							array('label'=>'<i class="fa fa-tasks"></i> 網址', 'url'=>array('/siteurl/admin'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>'<i class="fa fa-floppy-o"></i> 手動執行', 'url'=>array('/run/'), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'<i class="fa fa-cog"></i>管理登入', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),							
+							array('label'=>'<i class="fa fa-cog"></i> 登入', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),							
 							array('label'=>'登出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 						),
 					)); ?>

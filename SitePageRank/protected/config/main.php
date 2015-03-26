@@ -45,6 +45,8 @@ return array(
 		
 		 'urlManager'=>array(
 		 	'urlFormat'=>'path',
+		 	'showScriptName'=>false,
+		 	'caseSensitive'=>false,  
 			'rules'=>array(
 				'Getjsonbyid/<id:\d+>'=> 'Data/Getjsonbyid/',
 				'Getjson'=> 'Data/Getjson',
@@ -67,12 +69,12 @@ return array(
 				'行政單位排名/Getjson' => 'Data/GetOfficejson',
 				'學術單位排名/Getjson' => 'Data/GetTeachjson',
 				
-				'行政單位排名/report/'=>'report',
-				'學術單位排名/report/'=>'report',
-				'行政單位排名/report/Getjson'=>'Data/GetOfficejson',
-				'學術單位排名/report/Getjson' => 'Data/GetTeachjson',
-				'學術單位排名/report/Getjsonbyid/<id:\d+>' => 'Data/GetTeachJsonbyid/',
-				'行政單位排名/report/Getjsonbyid/<id:\d+>' => 'Data/GetOfficeJsonbyid/',
+				'/行政單位排名/report/'=>'report',
+				'/學術單位排名/report/'=>'report',
+				'/行政單位排名/report/Getjson'=>'Data/GetOfficejson',
+				'/學術單位排名/report/Getjson' => 'Data/GetTeachjson',
+				'/學術單位排名/report/Getjsonbyid/<id:\d+>' => 'Data/GetTeachJsonbyid/',
+				'/行政單位排名/report/Getjsonbyid/<id:\d+>' => 'Data/GetOfficeJsonbyid/',
 
 				'排名/Getjsonbyid/<id:\d+>' => 'Data/Getjsonbyid/',
 				'學術單位排名/Getjsonbyid/<id:\d+>' => 'Data/GetTeachJsonbyid/',

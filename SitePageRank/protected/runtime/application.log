@@ -11159,3 +11159,49 @@ REQUEST_URI=/index.php/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D/re
 in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/report/index.php (24)
 in /Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php (11)
 in /Users/WiSH/projects/SitePageRank/SitePageRank/index.php (13)
+2015/03/26 12:22:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+HTTP_REFERER=http://googleget:8888/
+---
+2015/03/26 12:22:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/26 12:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "行政單位排名".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+HTTP_REFERER=http://googleget:8888/index.php?r=site/index
+---
+2015/03/26 12:23:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "學術單位排名".' in /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%E5%AD%B8%E8%A1%93%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+HTTP_REFERER=http://googleget:8888/index.php?r=%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+---
+2015/03/26 12:29:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系統無法找到請求的 "行政單位排名" 動作.' in /Users/WiSH/projects/SitePageRank/framework/web/CController.php:483
+Stack trace:
+#0 /Users/WiSH/projects/SitePageRank/framework/web/CController.php(270): CController->missingAction('???????????????...')
+#1 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(282): CController->run('???????????????...')
+#2 /Users/WiSH/projects/SitePageRank/framework/web/CWebApplication.php(141): CWebApplication->runController('site/??????????...')
+#3 /Users/WiSH/projects/SitePageRank/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Users/WiSH/projects/SitePageRank/SitePageRank/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/%E8%A1%8C%E6%94%BF%E5%96%AE%E4%BD%8D%E6%8E%92%E5%90%8D
+HTTP_REFERER=http://googleget:8888/
+---

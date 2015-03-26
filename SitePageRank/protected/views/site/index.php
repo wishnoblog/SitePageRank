@@ -53,7 +53,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl .'/themes/boots
             </div>
 
             <p class="lead">
-                <a class="btn btn-outline-inverse btn-lg"  href = <?php echo '"' . Yii::app()->request->url . '/行政單位排名'.'"';?> ><i class="fa fa-university fa-lg"></i>  行政單位排名</a> <a class="btn btn-outline-inverse btn-lg"  href = <?php echo '"' . Yii::app()->request->url . '/學術單位排名'.'"';?> ><i class="fa fa-graduation-cap fa-lg"></i>  學術單位排名</a>
+            <?php echo CHtml::link('行政單位排名 <i class="fa fa-university fa-lg"></i>',array('/行政單位排名'),array('class' => 'btn btn-outline-inverse btn-lg')); ?>
+            <?php echo CHtml::link('學術單位排名 <i class="fa fa-graduation-cap  fa-lg"></i>',array('/學術單位排名'),array('class' => 'btn btn-outline-inverse btn-lg')); ?>     
             </p>
         </div>
     </div>
