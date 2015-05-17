@@ -1,0 +1,342 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is_nu",
+				"is_null"
+			],
+			[
+				"con",
+				"continue  (keyword)"
+			],
+			[
+				"act",
+				"actions"
+			],
+			[
+				"Data",
+				"DataId"
+			],
+			[
+				"file",
+				"fileTypeList"
+			],
+			[
+				"Get",
+				"GetSEOState"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"cou",
+				"counter"
+			],
+			[
+				"site",
+				"siteID"
+			],
+			[
+				"load",
+				"loadModel"
+			],
+			[
+				"group",
+				"group_model"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"pri",
+				"printf"
+			],
+			[
+				"geta",
+				"get_rank_Alaxa_link  (function)"
+			],
+			[
+				"Task",
+				"TaskID"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"wid",
+				"width:   (property)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 334.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"a",
+				"About"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/ReportController.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/main.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/main_report.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/main_classic.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/column3.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/RunController.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/layouts/column1.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Config/Services.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/curl/HttpRequest.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Services/Google.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/curl/GoogleWebSearch.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/detail.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/index.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/config/main.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/index.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/group/index.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/admin.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Helper/Url.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/SEOstats.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/config/test.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/view.php",
+		"/Users/WiSH/projects/SitePageRank/README.md",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/extensions/SEOstats/Config/DefaultSettings.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/seo.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/DataController.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/themes/bootstrap/css/one-page-wonder.css",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/SiteController.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/controllers/GroupController.php",
+		"/Users/WiSH/Google 雲端硬碟/Code/Open-SEO-Stats(Formerly--PageRank-Status)_v8.8.0.3/jsr/en_frame-seostats.js",
+		"/Users/WiSH/Downloads/SEOstats-master/example/get-alexa-metrics.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/pagerank.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/site/login.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/models/Site.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/models/ContactForm.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/models/TblUser.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/models/Data.php",
+		"/Users/WiSH/projects/SitePageRank/SitePageRank/protected/views/data/_view.php",
+		"/Users/WiSH/projects/fh/framework/i18n/data/zh_tw.php",
+		"/Users/WiSH/projects/fh/protected/models/ArrangeShifts.php",
+		"/Users/WiSH/projects/fh/protected/messages/zh_tw/yii.php",
+		"/Users/WiSH/projects/yii.php",
+		"/Users/WiSH/projects/fh/framework/i18n/data/en.php",
+		"/Users/WiSH/projects/fh/protected/views/arrangeShifts/_view.php",
+		"/Users/WiSH/projects/fh/framework/YiiBase.php",
+		"/Users/WiSH/projects/fh/framework/yiilite.php",
+		"/Users/WiSH/projects/fh/assets/15fe5cf1/jquery.maskedinput.min.js",
+		"/Users/WiSH/projects/fh/framework/web/js/source/jquery.maskedinput.min.js",
+		"/Users/WiSH/projects/fh/protected/views/arrangeShifts/view.php",
+		"/Users/WiSH/projects/fh/protected/views/arrangeShifts/_form.php",
+		"/Users/WiSH/projects/fh/protected/config/main.php",
+		"/Users/WiSH/projects/fh/protected/views/layouts/main.php",
+		"/Users/WiSH/projects/fh/protected/controllers/ArrangeShiftsController.php",
+		"/Users/WiSH/projects/fh/protected/models/_base/BaseArrangeShifts.php",
+		"/Users/WiSH/projects/fh/protected/models/_base/BaseIndexSlider.php",
+		"/Users/WiSH/projects/fh/protected/models/_base/BaseTplPages.php",
+		"/Users/WiSH/projects/fh/protected/models/Pages.php",
+		"/Users/WiSH/projects/fh/protected/views/arrangeShifts/_search.php",
+		"/Users/WiSH/projects/信愛教誨.sublime-project"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"//print_r($fa);\n	\n	",
+			"data_url",
+			"session",
+			"TaskID",
+			"actionGetTeachJson",
+			"Detail",
+			"頁面",
+			"檔案數",
+			"			\n",
+			"  ",
+			"noDataDefaultValue",
+			"getBacklinksTotal",
+			"get_rank_Alaxa_link",
+			"getJsonDetail",
+			"                    ",
+			"lnk_bl_google_w",
+			";\n",
+			"getJson",
+			"function",
+			"k",
+			"Ranl",
+			"		<?",
+			"style",
+			"Getjson",
+			"             ),",
+			" ;')->",
+			"說明",
+			"Delete",
+			"未設置",
+			"尚未",
+			"位"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

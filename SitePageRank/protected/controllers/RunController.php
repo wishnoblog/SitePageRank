@@ -36,7 +36,7 @@ class RunController extends Controller
 	{
 
 		header('Content-Type: text/html; charset=utf-8');
-		echo("手動執行成績抓取");
+		echo("手動執行抓取");
 
 		$this->GetNewSEOState();
 		//echo "連結數量".$this->get_rank_Alaxa_link('computer.kuas.edu.tw');
@@ -48,7 +48,7 @@ class RunController extends Controller
 	 */
 	public function actionGetData($key)
 	{
-		header('Content-Type: text; charset=utf-8');
+		header('Content-Type: text/html; charset=utf-8');
 		if($key==Yii::app()->params['runKey'])
 		{
 			//執行
@@ -63,22 +63,23 @@ class RunController extends Controller
 	}
 	public function actionFix()
 	{
-		header('Content-Type: text; charset=utf-8');
+		header('Content-Type: text/html; charset=utf-8');
 		
-		echo "修正抓取資料";
+		echo "更新資料開始";
 		$this->FixSEOState();
 	}
 	public function actionFixData()
 	{
-		header('Content-Type: text; charset=utf-8');
+		header('Content-Type: text/html; charset=utf-8');
 		if($key==Yii::app()->params['runKey'])
 		{
 			//執行
-			$this->GetSEOState();
+			echo "更新資料開始";
+			$this->FixSEOState();
 		}else
 		{
 			//序號錯誤
-			echo "修正抓取資料";
+			echo "驗證失敗";
 
 		}
 	}	
@@ -105,8 +106,8 @@ class RunController extends Controller
 	private function FixSEOState()
 	{
 		//取得最後一筆Task
-		//$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
-
+		$lastId = Yii::app()->db->createCommand('SELECT TaskID FROM task ORDER BY TaskID DESC LIMIT 1')->queryScalar();
+		//取得網址
 		$dataProvider = new CActiveDataProvider(
 			SiteUrl::model(),
 			array(
@@ -119,7 +120,7 @@ class RunController extends Controller
 		foreach ($dataProvider->getData() as $record) {
 			//逐一將DataID取出
 			//print_r($record);
-			$DataId = Yii::app()->db->createCommand("SELECT DataId FROM data WHERE `SiteID`= $record->SiteID ORDER BY TaskID DESC LIMIT 1")->queryScalar();	
+			$DataId = Yii::app()->db->createCommand("SELECT DataId FROM data WHERE `SiteID`= $record->SiteID AND `TaskID` = $lastId LIMIT 1")->queryScalar();	
 			//讀取資料
 			$model=Data::model()->findByPk($DataId);
 
@@ -136,7 +137,7 @@ class RunController extends Controller
 				usleep(rand(500,1000));
 				$model->GoogleData=$this->GetGoogleSearch("site:$record->site");
 
-				echo"[$record->site 修正索引部分],";
+				echo "[$record->site 修正索引部分],";
 
 			}
 			
@@ -146,7 +147,7 @@ class RunController extends Controller
 
 				usleep(rand(500,1000));
 				$model->google_backlink=$this->GetGoogleSearch("link:$record->site");
-				echo"[$record->site 修正連結部分],";
+				echo "[$record->site 修正連結部分],";
 			}
 
 			//逐一檢查檔案是否取得資料。
@@ -190,9 +191,6 @@ class RunController extends Controller
 			}
 			usleep(rand(100,400));
 
-
-
-
 		}
 
 	Yii::app()->end();
@@ -221,11 +219,13 @@ class RunController extends Controller
 		foreach ($dataProvider->getData() as $record) {
             $site= $record -> site;
             $id = $record -> SiteID;
-
+            // if($i>=5)
+            // {
+            // 	break;
+            // }
             //移除前面的http:// (若有的話)
             $site = preg_replace('#^https?://#', '', $site);
             $site = preg_replace('#^http?://#', '', $site);
-            
             //系統延遲
             $pagerank=0;
             $now = new DateTime;
